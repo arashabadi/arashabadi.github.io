@@ -14,13 +14,13 @@ I am a highly motivated PhD student at the University of Alabama at Birmingham, 
 ## Contact
 
 ::: {.contact-list}
-- <i class="fas fa-envelope"></i> Email: [abaghera@uab.edu](mailto:abaghera@uab.edu)
-- <i class="fas fa-envelope"></i> Gmail: [arash.bagherabadi@gmail.com](mailto:arash.bagherabadi@gmail.com)
-- <i class="fab fa-linkedin"></i> LinkedIn: [arashbagherabadi](https://www.linkedin.com/in/arashbagherabadi)
-- <i class="fab fa-x-twitter"></i> X: [@arash_b_abadi](https://x.com/arash_b_abadi)
-- <i class="fas fa-graduation-cap"></i> Google Scholar: [Arash B. Abadi](https://scholar.google.com/citations?user=Jk-OzNQAAAAJ&hl=en)
-- <i class="fas fa-id-card"></i> ORCID: [0000-0003-3036-5687](https://orcid.org/0000-0003-3036-5687)
-- <i class="fab fa-github"></i> GitHub: [arashabadi](https://github.com/arashabadi)
+- {{< fa envelope >}} Email: [abaghera@uab.edu](mailto:abaghera@uab.edu)
+- {{< fa envelope >}} Gmail: [arash.bagherabadi@gmail.com](mailto:arash.bagherabadi@gmail.com)
+- {{< fa brands linkedin >}} LinkedIn: [arashbagherabadi](https://www.linkedin.com/in/arashbagherabadi)
+- {{< fa brands x-twitter >}} X: [@arash_b_abadi](https://x.com/arash_b_abadi)
+- {{< fa graduation-cap >}} Google Scholar: [Arash B. Abadi](https://scholar.google.com/citations?user=Jk-OzNQAAAAJ&hl=en)
+- {{< fa id-card >}} ORCID: [0000-0003-3036-5687](https://orcid.org/0000-0003-3036-5687)
+- {{< fa brands github >}} GitHub: [arashabadi](https://github.com/arashabadi)
 :::
 
 ## Featured Projects
@@ -47,10 +47,9 @@ function toggleTheme() {
 }
 </script>
 
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
 ::: {.footer}
 © 2025 Arash B. Abadi. All rights reserved.
-Built using [Quarto](https://quarto.org/) <i class="fas fa-heart"></i> 
+Built using [Quarto](https://quarto.org/) {{< fa heart >}} 
 :::
 
+:::
