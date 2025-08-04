@@ -1,0 +1,65 @@
+name: Render Website
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: '1.4.549'
+          tinytex: false
+          
+      - name: Debug Information
+        run: |
+          echo "=== System Information ==="
+          uname -a
+          echo "=== Current directory: $(pwd) ==="
+          echo "=== Directory contents: ==="
+          ls -la
+          echo "=== Quarto version: ==="
+          quarto --version
+          echo "=== Checking _quarto.yml: ==="
+          cat _quarto.yml
+          echo "=== Environment variables: ==="
+          env | sort
+          
+      - name: Render Website
+        uses: quarto-dev/quarto-actions/render@v2
+        with:
+          args: --to html --debug
+          
+      - name: Check Output
+        run: |
+          echo "=== Checking docs directory: ==="
+          ls -la docs/
+          if [ ! -d "docs" ]; then
+            echo "Error: docs directory was not created"
+            exit 1
+          fi
+          echo "=== Contents of docs directory: ==="
+          find docs -type f
+          
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: docs
+          branch: gh-pages
+          clean: true 
