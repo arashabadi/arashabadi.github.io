@@ -5,6 +5,7 @@ project:
 website:
   title: "Arash"
   navbar:
+    title: false
     left:
       - href: index.qmd
         text: Home
@@ -32,4 +33,4 @@ format:
     link-external-newwindow: true
 
 execute:
-  freeze: auto 
+  freeze: auto
