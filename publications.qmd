@@ -5,6 +5,13 @@ title: "Publications"
 ::: {.content}
 
 ::: {.card}
+## DNA methylation and machine learning: challenges and perspective toward enhanced clinical diagnostics
+**Journal:** Clinical Epigenetics – Springer Nature<br>
+**Date:** October 10, 2025
+[View Publication →](https://link.springer.com/article/10.1186/s13148-025-01967-0)
+:::
+
+::: {.card}
 ## CCND1 Overexpression in Idiopathic Dilated Cardiomyopathy: A Promising Biomarker?
 **Journal:** Genes – MDPI  
 **Date:** June 10, 2023
