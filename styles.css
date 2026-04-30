@@ -182,23 +182,29 @@ body.dark-mode .footer a {
   display: none !important;
 }
 
-/* Theme Toggle Button */
+/* Navbar theme toggle */
+.quarto-navbar-tools {
+  align-items: center;
+  display: flex;
+  gap: 0.35rem;
+}
+
 .theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
+  appearance: none;
   background: var(--toggle-bg);
   border: 1px solid var(--toggle-border);
   cursor: pointer;
-  padding: 8px;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  color: var(--navbar-text);
+  height: 2.25rem;
+  margin-left: 0.25rem;
+  padding: 0;
+  position: relative;
+  width: 2.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
   transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -207,18 +213,23 @@ body.dark-mode .footer a {
   border-color: rgba(142, 202, 230, 0.52);
 }
 
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--navbar-active-bg);
+  outline-offset: 2px;
+}
+
 .theme-toggle i {
-  font-size: 1.2rem;
-  color: var(--text-color);
+  color: currentColor;
+  font-size: 1rem;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.theme-toggle .fa-sun {
+.theme-toggle .theme-toggle-sun {
   opacity: 1;
   transform: scale(1);
 }
 
-.theme-toggle .fa-moon {
+.theme-toggle .theme-toggle-moon {
   position: absolute;
   opacity: 0;
   transform: scale(0);
@@ -229,12 +240,12 @@ body.dark-mode .theme-toggle:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-body.dark-mode .theme-toggle .fa-sun {
+body.light-mode .theme-toggle .theme-toggle-sun {
   opacity: 0;
   transform: scale(0);
 }
 
-body.dark-mode .theme-toggle .fa-moon {
+body.light-mode .theme-toggle .theme-toggle-moon {
   opacity: 1;
   transform: scale(1);
 }

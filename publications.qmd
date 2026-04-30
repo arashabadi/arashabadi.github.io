@@ -32,8 +32,4 @@ title: "Publications"
 [View Publication →](https://www.mdpi.com/1999-4923/14/3/515)
 :::
 
-<button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch theme">
-  {{< fa sun >}}
-  {{< fa moon >}}
-</button>
 ::: 

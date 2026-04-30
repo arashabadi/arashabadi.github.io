@@ -71,11 +71,6 @@ I am a highly motivated PhD student at the University of Alabama at Birmingham, 
   </section>
 </div>
 
-<button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch theme">
-  {{< fa sun >}}
-  {{< fa moon >}}
-</button>
-
 ::: {.footer}
 © 2025 Arash Bagherabadi. All rights reserved.
 Built using [Quarto](https://quarto.org/) {{< fa heart >}} 

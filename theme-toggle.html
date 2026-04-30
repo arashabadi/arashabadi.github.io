@@ -1,21 +1,17 @@
 <script>
 (function () {
-  const storageKey = 'site-theme';
+  function createThemeToggle() {
+    if (document.querySelector('.theme-toggle')) return;
 
-  function readTheme() {
-    try {
-      return localStorage.getItem(storageKey);
-    } catch (error) {
-      return null;
-    }
-  }
+    const target = document.querySelector('.quarto-navbar-tools') || document.querySelector('.navbar .navbar-container');
+    if (!target) return;
 
-  function saveTheme(theme) {
-    try {
-      localStorage.setItem(storageKey, theme);
-    } catch (error) {
-      return;
-    }
+    const button = document.createElement('button');
+    button.className = 'theme-toggle';
+    button.type = 'button';
+    button.innerHTML = '<i class="bi bi-sun-fill theme-toggle-sun" aria-hidden="true"></i><i class="bi bi-moon-stars-fill theme-toggle-moon" aria-hidden="true"></i>';
+    button.addEventListener('click', window.toggleTheme);
+    target.appendChild(button);
   }
 
   function applyTheme(theme) {
@@ -32,9 +28,9 @@
   window.toggleTheme = function () {
     const nextTheme = document.body.classList.contains('light-mode') ? 'dark' : 'light';
     applyTheme(nextTheme);
-    saveTheme(nextTheme);
   };
 
-  applyTheme(readTheme() || 'dark');
+  createThemeToggle();
+  applyTheme('dark');
 })();
 </script>
