@@ -39,7 +39,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "A comprehensive Quarto-based online HTML book for the PATOQ project, providing curated resources for learning Bioinformatics, Data Science, and Machine Learning.\nView Project →\n\n\n\n\n\n\nHackathon project repository with code and project materials.\nView Repository →\n\n\n\n\n\n\nAn ongoing private project developing a 3D-printed plate reader for ELISPOT assays with a vision language model (VLM) counter. The project is planned to be published open source and made available online in the future.\nStatus: In progress Availability: Private now; planned open source release"
+    "text": "A comprehensive Quarto-based online HTML book for the PATOQ project, providing curated resources for learning Bioinformatics, Data Science, and Machine Learning.\nView Project →\n\n\n\n\n\n\nHackathon project repository with code and project materials.\nView Repository →\n\n\n\n\n\n\nAn ongoing personal project developing a 3D-printed plate reader for ELISPOT assays with a vision language model (VLM) counter. The project is planned to be published open source and made available online in the future.\nStatus: In progress Availability: Private now; planned open source release"
   },
   {
     "objectID": "projects.html#educational-resources",
@@ -60,7 +60,7 @@
     "href": "projects.html#robotics",
     "title": "Projects",
     "section": "",
-    "text": "An ongoing private project developing a 3D-printed plate reader for ELISPOT assays with a vision language model (VLM) counter. The project is planned to be published open source and made available online in the future.\nStatus: In progress Availability: Private now; planned open source release"
+    "text": "An ongoing personal project developing a 3D-printed plate reader for ELISPOT assays with a vision language model (VLM) counter. The project is planned to be published open source and made available online in the future.\nStatus: In progress Availability: Private now; planned open source release"
   },
   {
     "objectID": "index.html",

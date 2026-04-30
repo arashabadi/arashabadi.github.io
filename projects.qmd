@@ -26,7 +26,7 @@ Hackathon project repository with code and project materials.
 
 ::: {.card}
 ### ELISPOT Plate Reader Robot
-An ongoing private project developing a 3D-printed plate reader for ELISPOT assays with a vision language model (VLM) counter. The project is planned to be published open source and made available online in the future.
+An ongoing personal project developing a 3D-printed plate reader for ELISPOT assays with a vision language model (VLM) counter. The project is planned to be published open source and made available online in the future.
 
 **Status:** In progress<br>
 **Availability:** Private now; planned open source release
