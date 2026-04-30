@@ -4,7 +4,7 @@ title: "Arash B. Abadi"
 
 ::: {.content}
 ::: {.profile-image}
-![](images/profile.jpg){.profile-pic}
+![](images/profile.PNG){.profile-pic}
 :::
 
 ## Welcome!
@@ -53,4 +53,3 @@ function toggleTheme() {
 © 2025 Arash B. Abadi. All rights reserved.
 Built with <i class="fas fa-heart"></i> using [Quarto](https://quarto.org/)
 :::
-
