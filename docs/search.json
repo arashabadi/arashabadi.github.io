@@ -39,7 +39,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "A comprehensive Quarto-based online HTML book for the PATOQ project, providing curated resources for learning Bioinformatics, Data Science, and Machine Learning.\nView Project →\n\n\n\n\n\n\nHackathon project repository with code and project materials.\nView Repository →\n\n\n\n\n\n\nAn ongoing personal project developing a 3D-printed plate reader for ELISPOT assays with a vision language model (VLM) counter. The project is planned to be published open source and made available online in the future.\nStatus: In progress Availability: Private now; planned open source release"
+    "text": "A comprehensive Quarto-based online HTML book for the PATOQ project, providing curated resources for learning Bioinformatics, Data Science, and Machine Learning.\nView Project →\n\n\n\n\n\n\nTeam project from the 2025 CM4AI Hackathon at UAB focused on alternative image-embedding workflows for immunofluorescence data. The work explored cell segmentation, per-cell cropping and preprocessing, and SubCell-based inference to generate embeddings, attention maps, and class probabilities for downstream comparison with the CM4AI pipeline.\nView Repository →\n\n\n\n\n\n\nAn ongoing personal project developing a 3D-printed plate reader for ELISPOT assays with a vision language model (VLM) counter. The project is planned to be published open source and made available online in the future.\nStatus: In progress Availability: Private now; planned open source release"
   },
   {
     "objectID": "projects.html#educational-resources",
@@ -53,7 +53,7 @@
     "href": "projects.html#hackathons",
     "title": "Projects",
     "section": "",
-    "text": "Hackathon project repository with code and project materials.\nView Repository →"
+    "text": "Team project from the 2025 CM4AI Hackathon at UAB focused on alternative image-embedding workflows for immunofluorescence data. The work explored cell segmentation, per-cell cropping and preprocessing, and SubCell-based inference to generate embeddings, attention maps, and class probabilities for downstream comparison with the CM4AI pipeline.\nView Repository →"
   },
   {
     "objectID": "projects.html#robotics",

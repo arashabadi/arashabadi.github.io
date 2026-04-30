@@ -17,7 +17,7 @@ A comprehensive Quarto-based online HTML book for the PATOQ project, providing c
 
 ::: {.card}
 ### CM4AI CodeFest 2025
-Hackathon project repository with code and project materials.
+Team project from the 2025 CM4AI Hackathon at UAB focused on alternative image-embedding workflows for immunofluorescence data. The work explored cell segmentation, per-cell cropping and preprocessing, and SubCell-based inference to generate embeddings, attention maps, and class probabilities for downstream comparison with the CM4AI pipeline.
 
 [View Repository →](https://github.com/arashabadi/cm4ai_codefest2025)
 :::
