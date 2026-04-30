@@ -1,0 +1,60 @@
+---
+title: "GBSO Symposium"
+---
+
+::: {.content}
+
+## Graduate Biomedical Sciences Organization (GBSO) Symposium
+
+::: {.card}
+### Overview
+The Graduate Biomedical Sciences Organization (GBSO) Symposium at the University of Alabama at Birmingham provides a platform for graduate students to present their research findings and engage with the broader scientific community.
+
+**Institution:** University of Alabama at Birmingham  
+**Event Type:** Graduate Student Research Symposium  
+**Focus Areas:** Biomedical Sciences, Bioinformatics, Computational Biology
+:::
+
+::: {.card}
+### Presentation Details
+**Title:** [Add your presentation title here]  
+**Date:** [Add presentation date]  
+**Format:** [Poster/Oral Presentation]  
+
+**Abstract:** [Add your abstract here - describe your research objectives, methods, results, and conclusions]
+
+**Key Highlights:**
+- [Add key research finding 1]
+- [Add key research finding 2]
+- [Add key research finding 3]
+:::
+
+::: {.card}
+### Research Impact
+**Significance:** [Describe the broader impact and significance of your research]
+
+**Applications:** [Describe potential applications of your findings]
+
+**Future Directions:** [Outline future research directions]
+:::
+
+::: {.card}
+### Materials & Resources
+- **Poster/Slides:** [Link to presentation materials if available]
+- **Supplementary Data:** [Link to additional data or resources]
+- **Related Publications:** [Links to any related publications]
+:::
+
+[← Back to Projects](../projects.qmd)
+
+<button class="theme-toggle" onclick="toggleTheme()">
+  {{< fa sun >}}
+  {{< fa moon >}}
+</button>
+
+<script>
+function toggleTheme() {
+  document.body.classList.toggle('dark-mode');
+}
+</script>
+:::

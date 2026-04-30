@@ -1,0 +1,31 @@
+---
+title: "Projects"
+---
+
+::: {.content}
+
+## Research Projects
+
+::: {.card}
+### GBSO Symposium
+A comprehensive presentation on cutting-edge research in biological sciences and bioinformatics applications.
+
+**Event:** Graduate Biomedical Sciences Organization (GBSO) Symposium  
+**Institution:** University of Alabama at Birmingham
+
+[View Details →](projects/gbso-symposium.qmd)
+:::
+
+<!-- Add more project cards here as needed -->
+
+<button class="theme-toggle" onclick="toggleTheme()">
+  {{< fa sun >}}
+  {{< fa moon >}}
+</button>
+
+<script>
+function toggleTheme() {
+  document.body.classList.toggle('dark-mode');
+}
+</script>
+:::
