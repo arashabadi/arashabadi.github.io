@@ -1,0 +1,46 @@
+name: Render Website
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: '1.4.549'
+          tinytex: false
+
+      - name: Render Website
+        uses: quarto-dev/quarto-actions/render@v2
+        with:
+          args: --to html
+
+      - name: Check Output
+        run: |
+          echo "=== Checking docs directory: ==="
+          ls -la docs/
+          if [ ! -d "docs" ]; then
+            echo "Error: docs directory was not created"
+            exit 1
+          fi
+          if [ ! -f "docs/index.html" ]; then
+            echo "Error: docs/index.html was not created"
+            exit 1
+          fi
+          echo "=== Contents of docs directory: ==="
+          find docs -type f

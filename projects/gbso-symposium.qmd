@@ -48,8 +48,8 @@ The Graduate Biomedical Sciences Organization (GBSO) Symposium at the University
 [← Back to Projects](../projects.qmd)
 
 <button class="theme-toggle" onclick="toggleTheme()">
-  <i class="fas fa-sun"></i>
-  <i class="fas fa-moon"></i>
+  {{< fa sun >}}
+  {{< fa moon >}}
 </button>
 
 <script>
@@ -57,6 +57,4 @@ function toggleTheme() {
   document.body.classList.toggle('dark-mode');
 }
 </script>
-
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 :::

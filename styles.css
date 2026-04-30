@@ -9,7 +9,8 @@
   --background-color: #1a1a1a;
   --code-background: #2d2d2d;
   --navbar-bg: #1a1a1a;
-  --navbar-text: #87CEEB;  /* Light blue color */
+  --navbar-text: #8ecae6;  /* Light blue color */
+  --header-text: #3498db;
 }
 
 body {
@@ -32,7 +33,7 @@ body {
   font-family: 'JetBrains Mono', monospace;
   font-size: 2rem;
   margin-bottom: 0.75rem;
-  color: var(--primary-color);
+  color: var(--header-text);
   letter-spacing: -0.5px;
 }
 
@@ -114,7 +115,7 @@ body.dark-mode .footer {
 }
 
 body.dark-mode .footer a {
-  color: #8ab4f8;
+  color: --accent-color;
 }
 
 /* Hide section numbers */
@@ -236,7 +237,7 @@ pre {
 
 /* Social icons */
 .navbar-nav .nav-link {
-  color: var(--primary-color);
+  color: var(--navbar-text);
   padding: 0.5rem 0.75rem;
 }
 
@@ -297,7 +298,7 @@ pre {
 
 /* Dark mode adjustments for icons */
 body.dark-mode .contact-list i {
-  color: #8ab4f8;
+  color: --accent-color;
 }
 
 body.dark-mode .content h1 {
