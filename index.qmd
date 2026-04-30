@@ -1,5 +1,5 @@
 ---
-title: "Arash B. Abadi"
+title: "Arash Bagherabadi"
 ---
 
 ::: {.content}
@@ -18,18 +18,9 @@ I am a highly motivated PhD student at the University of Alabama at Birmingham, 
 - {{< fa envelope >}} Gmail: [arash.bagherabadi@gmail.com](mailto:arash.bagherabadi@gmail.com)
 - {{< fa brands linkedin >}} LinkedIn: [arashbagherabadi](https://www.linkedin.com/in/arashbagherabadi)
 - {{< fa brands x-twitter >}} X: [@arash_b_abadi](https://x.com/arash_b_abadi)
-- {{< fa graduation-cap >}} Google Scholar: [Arash B. Abadi](https://scholar.google.com/citations?user=Jk-OzNQAAAAJ&hl=en)
+- {{< fa graduation-cap >}} Google Scholar: [Arash Bagherabadi](https://scholar.google.com/citations?user=Jk-OzNQAAAAJ&hl=en)
 - {{< fa id-card >}} ORCID: [0000-0003-3036-5687](https://orcid.org/0000-0003-3036-5687)
 - {{< fa brands github >}} GitHub: [arashabadi](https://github.com/arashabadi)
-:::
-
-## Featured Projects
-
-::: {.card}
-### PATOQ Book
-A comprehensive Quarto-based online HTML book for the PATOQ project, providing curated resources for learning Bioinformatics, Data Science, and Machine Learning.
-
-[View Project →](https://arashabadi.github.io/patoq/)
 :::
 
 <button class="theme-toggle" onclick="toggleTheme()">
@@ -48,7 +39,7 @@ function toggleTheme() {
 </script>
 
 ::: {.footer}
-© 2025 Arash B. Abadi. All rights reserved.
+© 2025 Arash Bagherabadi. All rights reserved.
 Built using [Quarto](https://quarto.org/) {{< fa heart >}} 
 :::
 

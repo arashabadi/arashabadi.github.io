@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Arash"
+  title: "Arash Bagherabadi"
   navbar:
     title: false
     left:
@@ -18,8 +18,8 @@ website:
         href: https://github.com/arashabadi
       - icon: linkedin
         href: https://linkedin.com/in/arashbagherabadi
-      - icon: twitter
-        href: https://twitter.com/arash_b_abadi
+      - icon: twitter-x
+        href: https://x.com/arash_b_abadi
 
 format:
   html:

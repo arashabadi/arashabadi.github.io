@@ -7,16 +7,11 @@ title: "Projects"
 ## Research Projects
 
 ::: {.card}
-### GBSO Symposium
-A comprehensive presentation on cutting-edge research in biological sciences and bioinformatics applications.
+### PATOQ Book
+A comprehensive Quarto-based online HTML book for the PATOQ project, providing curated resources for learning Bioinformatics, Data Science, and Machine Learning.
 
-**Event:** Graduate Biomedical Sciences Organization (GBSO) Symposium  
-**Institution:** University of Alabama at Birmingham
-
-[View Details →](projects/gbso-symposium.qmd)
+[View Project →](https://arashabadi.github.io/patoq/)
 :::
-
-<!-- Add more project cards here as needed -->
 
 <button class="theme-toggle" onclick="toggleTheme()">
   {{< fa sun >}}
