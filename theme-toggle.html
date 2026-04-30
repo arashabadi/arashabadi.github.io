@@ -30,6 +30,54 @@
     applyTheme(nextTheme);
   };
 
+  window.copyContactValue = async function (button) {
+    const value = button.dataset.copyValue;
+    const originalLabel = button.dataset.originalLabel || button.getAttribute('aria-label');
+    const originalTitle = button.dataset.originalTitle || button.getAttribute('title');
+    const originalHtml = button.dataset.originalHtml || button.innerHTML;
+
+    button.dataset.originalLabel = originalLabel;
+    button.dataset.originalTitle = originalTitle;
+    button.dataset.originalHtml = originalHtml;
+
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(value);
+      } else {
+        const field = document.createElement('textarea');
+        field.value = value;
+        field.setAttribute('readonly', '');
+        field.style.position = 'fixed';
+        field.style.opacity = '0';
+        field.style.top = '0';
+        document.body.appendChild(field);
+        field.focus();
+        field.select();
+        field.setSelectionRange(0, value.length);
+        if (!document.execCommand('copy')) {
+          throw new Error('Copy command failed');
+        }
+        document.body.removeChild(field);
+      }
+
+      button.classList.add('is-copied');
+      button.innerHTML = '<i class="fa-solid fa-check" aria-hidden="true"></i>';
+      button.setAttribute('aria-label', 'Copied');
+      button.setAttribute('title', 'Copied');
+    } catch (error) {
+      button.setAttribute('aria-label', 'Copy failed');
+      button.setAttribute('title', 'Copy failed');
+    }
+
+    window.clearTimeout(button.copyResetTimer);
+    button.copyResetTimer = window.setTimeout(function () {
+      button.classList.remove('is-copied');
+      button.innerHTML = originalHtml;
+      button.setAttribute('aria-label', originalLabel);
+      button.setAttribute('title', originalTitle);
+    }, 1500);
+  };
+
   createThemeToggle();
   applyTheme('dark');
 })();

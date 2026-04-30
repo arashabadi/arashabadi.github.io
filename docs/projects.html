@@ -4228,6 +4228,10 @@ gap: 0.7rem;
 grid-template-columns: 1.25rem minmax(0, 1fr);
 padding: 0.75rem 0;
 }
+.contact-row-copy {
+align-items: center;
+grid-template-columns: 1.25rem minmax(0, 1fr) 2rem;
+}
 .contact-row:first-of-type {
 border-top: 0;
 padding-top: 0;
@@ -4240,11 +4244,24 @@ padding-bottom: 0;
 color: var(--accent-color);
 text-decoration: none;
 }
+.contact-link {
+color: inherit;
+display: block;
+min-width: 0;
+}
+.contact-link:hover,
+.contact-link:focus {
+color: var(--accent-color);
+text-decoration: none;
+}
 .contact-row i {
 color: var(--accent-color);
 margin-top: 0.2rem;
 text-align: center;
 width: 1.25rem;
+}
+.contact-row-copy > i {
+margin-top: 0;
 }
 .contact-label {
 color: var(--heading-text);
@@ -4260,6 +4277,40 @@ display: block;
 font-size: 0.92rem;
 overflow-wrap: anywhere;
 word-break: break-word;
+}
+.copy-button {
+align-items: center;
+background: rgba(77, 171, 247, 0.1);
+border: 1px solid rgba(142, 202, 230, 0.2);
+border-radius: 6px;
+color: var(--accent-color);
+cursor: pointer;
+display: inline-flex;
+height: 2rem;
+justify-content: center;
+padding: 0;
+transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+width: 2rem;
+}
+.copy-button:hover,
+.copy-button:focus {
+background: rgba(77, 171, 247, 0.18);
+border-color: rgba(142, 202, 230, 0.46);
+outline: none;
+}
+.copy-button:focus-visible {
+outline: 2px solid var(--navbar-active-bg);
+outline-offset: 2px;
+}
+.copy-button.is-copied {
+background: rgba(63, 182, 24, 0.16);
+border-color: rgba(63, 182, 24, 0.42);
+color: #6ee37d;
+}
+.copy-button i {
+color: currentColor;
+margin: 0;
+width: auto;
 }
 @media (max-width: 768px) {
 .contact-grid {
@@ -4494,6 +4545,54 @@ color: #ffffff !important;
   window.toggleTheme = function () {
     const nextTheme = document.body.classList.contains('light-mode') ? 'dark' : 'light';
     applyTheme(nextTheme);
+  };
+
+  window.copyContactValue = async function (button) {
+    const value = button.dataset.copyValue;
+    const originalLabel = button.dataset.originalLabel || button.getAttribute('aria-label');
+    const originalTitle = button.dataset.originalTitle || button.getAttribute('title');
+    const originalHtml = button.dataset.originalHtml || button.innerHTML;
+
+    button.dataset.originalLabel = originalLabel;
+    button.dataset.originalTitle = originalTitle;
+    button.dataset.originalHtml = originalHtml;
+
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(value);
+      } else {
+        const field = document.createElement('textarea');
+        field.value = value;
+        field.setAttribute('readonly', '');
+        field.style.position = 'fixed';
+        field.style.opacity = '0';
+        field.style.top = '0';
+        document.body.appendChild(field);
+        field.focus();
+        field.select();
+        field.setSelectionRange(0, value.length);
+        if (!document.execCommand('copy')) {
+          throw new Error('Copy command failed');
+        }
+        document.body.removeChild(field);
+      }
+
+      button.classList.add('is-copied');
+      button.innerHTML = '<i class="fa-solid fa-check" aria-hidden="true"></i>';
+      button.setAttribute('aria-label', 'Copied');
+      button.setAttribute('title', 'Copied');
+    } catch (error) {
+      button.setAttribute('aria-label', 'Copy failed');
+      button.setAttribute('title', 'Copy failed');
+    }
+
+    window.clearTimeout(button.copyResetTimer);
+    button.copyResetTimer = window.setTimeout(function () {
+      button.classList.remove('is-copied');
+      button.innerHTML = originalHtml;
+      button.setAttribute('aria-label', originalLabel);
+      button.setAttribute('title', originalTitle);
+    }, 1500);
   };
 
   createThemeToggle();

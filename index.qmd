@@ -13,23 +13,30 @@ I am a PhD student at the University of Alabama at Birmingham focused on immune 
 
 ## Contact
 
+```{=html}
 <div class="contact-grid">
   <section class="contact-group" aria-labelledby="contact-email">
     <h3 id="contact-email">Email</h3>
-    <a class="contact-row" href="mailto:abaghera@uab.edu" aria-label="Email Arash Bagherabadi at UAB">
+    <div class="contact-row contact-row-copy">
       <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-      <span>
+      <a class="contact-link" href="mailto:abaghera@uab.edu" aria-label="Email Arash Bagherabadi at UAB">
         <span class="contact-label">UAB email</span>
         <span class="contact-value">abaghera@uab.edu</span>
-      </span>
-    </a>
-    <a class="contact-row" href="mailto:arash.bagherabadi@gmail.com" aria-label="Email Arash Bagherabadi at personal email">
+      </a>
+      <button class="copy-button" type="button" data-copy-value="abaghera@uab.edu" onclick="copyContactValue(this)" aria-label="Copy UAB email" title="Copy UAB email">
+        <i class="fa-solid fa-copy" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="contact-row contact-row-copy">
       <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-      <span>
+      <a class="contact-link" href="mailto:arash.bagherabadi@gmail.com" aria-label="Email Arash Bagherabadi at personal email">
         <span class="contact-label">Personal email</span>
         <span class="contact-value">arash.bagherabadi@gmail.com</span>
-      </span>
-    </a>
+      </a>
+      <button class="copy-button" type="button" data-copy-value="arash.bagherabadi@gmail.com" onclick="copyContactValue(this)" aria-label="Copy personal email" title="Copy personal email">
+        <i class="fa-solid fa-copy" aria-hidden="true"></i>
+      </button>
+    </div>
   </section>
   <section class="contact-group" aria-labelledby="contact-profiles">
     <h3 id="contact-profiles">Profiles</h3>
@@ -70,6 +77,7 @@ I am a PhD student at the University of Alabama at Birmingham focused on immune 
     </a>
   </section>
 </div>
+```
 
 ::: {.footer}
 © 2025 Arash Bagherabadi. All rights reserved.
