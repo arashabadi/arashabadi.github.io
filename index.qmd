@@ -9,7 +9,7 @@ title: "Arash Bagherabadi"
 
 ## About
 
-I am a highly motivated PhD student at the University of Alabama at Birmingham, with growing experience in B cell biology in infection and regulatory T cell biology across cancer and obesity contexts. I'm actively building expertise in single-cell and spatial transcriptomics, bioinformatics pipelines, and machine learning, with a strong interest in their application to vaccines and immunotherapy. 
+I am a PhD student at the University of Alabama at Birmingham focused on immune biology and computational approaches in basic research. My work spans resident memory B cell biology and tertiary lymphoid structures (iBALT) in influenza infection, as well as regulatory T cell metabolism in cancer and obesity contexts, with growing emphasis on single-cell and spatial techniques (e.g., Xenium), reproducible bioinformatics workflows, machine learning, and agentic AI. I am especially interested in applying these tools to vaccine and immunotherapy research.
 
 ## Contact
 
