@@ -17,6 +17,9 @@
   --navbar-active-bg: #8ecae6;
   --navbar-active-text: #08131f;
   --header-text: #3498db;
+  --heading-text: #f4f8fb;
+  --toggle-bg: rgba(21, 25, 29, 0.84);
+  --toggle-border: rgba(142, 202, 230, 0.28);
 }
 
 body {
@@ -27,6 +30,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 0.95rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .content {
@@ -46,7 +50,7 @@ body {
 .content h2 {
   font-family: 'JetBrains Mono', monospace;
   font-size: 1.5rem;
-  color: var(--secondary-color);
+  color: var(--heading-text);
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
 }
@@ -55,6 +59,19 @@ body {
   font-size: 1.2rem;
   margin-top: 1.25rem;
   margin-bottom: 0.5rem;
+  color: var(--heading-text);
+}
+
+.section-heading {
+  letter-spacing: 0;
+}
+
+h2.section-heading {
+  color: var(--header-text) !important;
+}
+
+section.section-heading {
+  color: inherit;
 }
 
 .navbar {
@@ -157,7 +174,7 @@ body.dark-mode .footer {
 }
 
 body.dark-mode .footer a {
-  color: --accent-color;
+  color: var(--accent-color);
 }
 
 /* Hide section numbers */
@@ -171,8 +188,8 @@ body.dark-mode .footer a {
   top: 20px;
   right: 20px;
   z-index: 1000;
-  background: transparent;
-  border: none;
+  background: var(--toggle-bg);
+  border: 1px solid var(--toggle-border);
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
@@ -181,11 +198,13 @@ body.dark-mode .footer a {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .theme-toggle:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(77, 171, 247, 0.18);
+  border-color: rgba(142, 202, 230, 0.52);
 }
 
 .theme-toggle i {
@@ -224,6 +243,7 @@ body.dark-mode .theme-toggle .fa-moon {
 body.dark-mode {
   background-color: #1a1a1a;
   color: #e0e0e0;
+  color-scheme: dark;
 }
 
 body.dark-mode a {
@@ -389,7 +409,7 @@ pre {
 
 /* Dark mode adjustments for icons */
 body.dark-mode .contact-list i {
-  color: --accent-color;
+  color: var(--accent-color);
 }
 
 body.dark-mode .content h1 {
@@ -406,10 +426,23 @@ body.dark-mode .content h3 {
 
 /* Light Mode Styles */
 body.light-mode {
-  background-color: #ffffff;
-  color: var(--primary-color);
-  --navbar-bg: #ffffff;
-  --navbar-text: #2c3e50;
+  --primary-color: #25384a;
+  --secondary-color: #3d5a70;
+  --accent-color: #246fa8;
+  --text-color: #263442;
+  --background-color: #f3f7fa;
+  --code-background: #e3ebf2;
+  --surface-color: #e9f1f7;
+  --surface-border: #c7d7e4;
+  --surface-shadow: rgba(37, 56, 74, 0.12);
+  --muted-text: #4f6070;
+  --header-text: #246fa8;
+  --heading-text: #223244;
+  --toggle-bg: rgba(255, 255, 255, 0.88);
+  --toggle-border: rgba(37, 56, 74, 0.16);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  color-scheme: light;
 }
 
 body.light-mode a {
@@ -417,13 +450,14 @@ body.light-mode a {
 }
 
 body.light-mode .content {
-  background-color: #ffffff;
+  background-color: transparent;
 }
 
 body.light-mode .card {
-  background-color: #ffffff;
-  border-color: #e1e4e8;
-  color: #2d2d2d;
+  background: var(--surface-color);
+  border-color: var(--surface-border);
+  color: var(--text-color);
+  box-shadow: 0 12px 28px var(--surface-shadow);
 }
 
 body.light-mode .card h2,
@@ -434,11 +468,12 @@ body.light-mode .card strong {
 
 body.light-mode .card p,
 body.light-mode .card li {
-  color: #2d2d2d;
+  color: var(--muted-text);
 }
 
 body.light-mode .card:hover {
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-color: rgba(36, 111, 168, 0.34);
+  box-shadow: 0 16px 34px rgba(37, 56, 74, 0.16);
 }
 
 body.light-mode .contact-list i {
@@ -446,7 +481,7 @@ body.light-mode .contact-list i {
 }
 
 body.light-mode .footer {
-  border-top-color: var(--primary-color);
+  border-top-color: var(--surface-border);
   color: var(--text-color);
 }
 
@@ -455,31 +490,32 @@ body.light-mode .footer a {
 }
 
 body.light-mode .content h1 {
-  color: var(--primary-color);
+  color: var(--header-text);
 }
 
 body.light-mode .content h2 {
-  color: var(--secondary-color);
+  color: var(--heading-text);
 }
 
 body.light-mode .content h3 {
-  color: var(--text-color);
+  color: var(--heading-text);
 }
 
 /* Light Mode Navbar Styles */
 body.light-mode .navbar {
   background-color: var(--navbar-bg);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-bottom-color: rgba(142, 202, 230, 0.16);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
 body.light-mode .navbar-brand {
-  color: var(--navbar-text);
+  color: var(--navbar-text) !important;
 }
 
 body.light-mode .nav-link {
-  color: var(--navbar-text);
+  color: var(--navbar-text) !important;
 }
 
 body.light-mode .nav-link:hover {
-  color: var(--accent-color);
+  color: #ffffff !important;
 }

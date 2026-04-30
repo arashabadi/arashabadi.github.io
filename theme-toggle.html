@@ -1,0 +1,40 @@
+<script>
+(function () {
+  const storageKey = 'site-theme';
+
+  function readTheme() {
+    try {
+      return localStorage.getItem(storageKey);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function saveTheme(theme) {
+    try {
+      localStorage.setItem(storageKey, theme);
+    } catch (error) {
+      return;
+    }
+  }
+
+  function applyTheme(theme) {
+    const isLight = theme === 'light';
+    document.body.classList.toggle('light-mode', isLight);
+    document.body.classList.toggle('dark-mode', !isLight);
+
+    document.querySelectorAll('.theme-toggle').forEach((button) => {
+      button.setAttribute('aria-label', isLight ? 'Switch to night theme' : 'Switch to day theme');
+      button.setAttribute('title', isLight ? 'Switch to night theme' : 'Switch to day theme');
+    });
+  }
+
+  window.toggleTheme = function () {
+    const nextTheme = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+    applyTheme(nextTheme);
+    saveTheme(nextTheme);
+  };
+
+  applyTheme(readTheme() || 'dark');
+})();
+</script>

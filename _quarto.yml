@@ -25,6 +25,7 @@ format:
   html:
     theme: cosmo
     css: styles.css
+    include-after-body: theme-toggle.html
     toc: false
     code-fold: true
     code-tools: true

@@ -4,7 +4,7 @@ title: "Projects"
 
 ::: {.content}
 
-## Research Projects
+## Educational {.section-heading}
 
 ::: {.card}
 ### PATOQ Book
@@ -13,14 +13,23 @@ A comprehensive Quarto-based online HTML book for the PATOQ project, providing c
 [View Project →](https://arashabadi.github.io/patoq/)
 :::
 
-<button class="theme-toggle" onclick="toggleTheme()">
+::: {.card}
+### Hackathon
+CM4AI CodeFest 2025 hackathon project repository with code and project materials.
+
+[View Repository →](https://github.com/arashabadi/cm4ai_codefest2025)
+:::
+
+::: {.card}
+### Robot
+An ongoing private project developing a 3D-printed plate reader for ELISPOT assays with a vision language model (VLM) counter. The project is planned to be published open source and made available online in the future.
+
+**Status:** In progress<br>
+**Availability:** Private now; planned open source release
+:::
+
+<button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch theme">
   {{< fa sun >}}
   {{< fa moon >}}
 </button>
-
-<script>
-function toggleTheme() {
-  document.body.classList.toggle('dark-mode');
-}
-</script>
 :::

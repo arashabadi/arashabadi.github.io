@@ -23,20 +23,10 @@ I am a highly motivated PhD student at the University of Alabama at Birmingham, 
 - {{< fa brands github >}} GitHub: [arashabadi](https://github.com/arashabadi)
 :::
 
-<button class="theme-toggle" onclick="toggleTheme()">
+<button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch theme">
   {{< fa sun >}}
   {{< fa moon >}}
 </button>
-
-<script>
-// Set dark mode as default
-document.body.classList.add('dark-mode');
-
-function toggleTheme() {
-  document.body.classList.toggle('dark-mode');
-  document.body.classList.toggle('light-mode');
-}
-</script>
 
 ::: {.footer}
 © 2025 Arash Bagherabadi. All rights reserved.
