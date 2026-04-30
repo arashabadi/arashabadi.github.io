@@ -7,21 +7,69 @@ title: "Arash Bagherabadi"
 ![](images/profile.PNG){.profile-pic}
 :::
 
-## Welcome!
+## About
 
 I am a highly motivated PhD student at the University of Alabama at Birmingham, with growing experience in B cell biology in infection and regulatory T cell biology across cancer and obesity contexts. I'm actively building expertise in single-cell and spatial transcriptomics, bioinformatics pipelines, and machine learning, with a strong interest in their application to vaccines and immunotherapy. 
 
 ## Contact
 
-::: {.contact-list}
-- {{< fa envelope >}} Email: [abaghera@uab.edu](mailto:abaghera@uab.edu)
-- {{< fa envelope >}} Gmail: [arash.bagherabadi@gmail.com](mailto:arash.bagherabadi@gmail.com)
-- {{< fa brands linkedin >}} LinkedIn: [arashbagherabadi](https://www.linkedin.com/in/arashbagherabadi)
-- {{< fa brands x-twitter >}} X: [@arash_b_abadi](https://x.com/arash_b_abadi)
-- {{< fa graduation-cap >}} Google Scholar: [Arash Bagherabadi](https://scholar.google.com/citations?user=Jk-OzNQAAAAJ&hl=en)
-- {{< fa id-card >}} ORCID: [0000-0003-3036-5687](https://orcid.org/0000-0003-3036-5687)
-- {{< fa brands github >}} GitHub: [arashabadi](https://github.com/arashabadi)
-:::
+<div class="contact-grid">
+  <section class="contact-group" aria-labelledby="contact-email">
+    <h3 id="contact-email">Email</h3>
+    <a class="contact-row" href="mailto:abaghera@uab.edu" aria-label="Email Arash Bagherabadi at UAB">
+      <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+      <span>
+        <span class="contact-label">UAB email</span>
+        <span class="contact-value">abaghera@uab.edu</span>
+      </span>
+    </a>
+    <a class="contact-row" href="mailto:arash.bagherabadi@gmail.com" aria-label="Email Arash Bagherabadi at personal email">
+      <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+      <span>
+        <span class="contact-label">Personal email</span>
+        <span class="contact-value">arash.bagherabadi@gmail.com</span>
+      </span>
+    </a>
+  </section>
+  <section class="contact-group" aria-labelledby="contact-profiles">
+    <h3 id="contact-profiles">Profiles</h3>
+    <a class="contact-row" href="https://www.linkedin.com/in/arashbagherabadi" target="_blank" rel="noopener" aria-label="Arash Bagherabadi on LinkedIn">
+      <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+      <span>
+        <span class="contact-label">LinkedIn</span>
+        <span class="contact-value">arashbagherabadi</span>
+      </span>
+    </a>
+    <a class="contact-row" href="https://scholar.google.com/citations?user=Jk-OzNQAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Arash Bagherabadi on Google Scholar">
+      <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+      <span>
+        <span class="contact-label">Google Scholar</span>
+        <span class="contact-value">Arash Bagherabadi</span>
+      </span>
+    </a>
+    <a class="contact-row" href="https://orcid.org/0000-0003-3036-5687" target="_blank" rel="noopener" aria-label="Arash Bagherabadi ORCID profile">
+      <i class="fa-solid fa-id-card" aria-hidden="true"></i>
+      <span>
+        <span class="contact-label">ORCID</span>
+        <span class="contact-value">0000-0003-3036-5687</span>
+      </span>
+    </a>
+    <a class="contact-row" href="https://github.com/arashabadi" target="_blank" rel="noopener" aria-label="Arash Bagherabadi on GitHub">
+      <i class="fa-brands fa-github" aria-hidden="true"></i>
+      <span>
+        <span class="contact-label">GitHub</span>
+        <span class="contact-value">arashabadi</span>
+      </span>
+    </a>
+    <a class="contact-row" href="https://x.com/arash_b_abadi" target="_blank" rel="noopener" aria-label="Arash Bagherabadi on X">
+      <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+      <span>
+        <span class="contact-label">X</span>
+        <span class="contact-value">@arash_b_abadi</span>
+      </span>
+    </a>
+  </section>
+</div>
 
 <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch theme">
   {{< fa sun >}}
