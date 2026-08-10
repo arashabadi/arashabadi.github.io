@@ -1,6 +1,6 @@
 ---
-title: "Blog"
-description: "Notes on spatial biology, immunology, computation, and building scientific tools."
+title: "Small Worlds, Large Systems"
+description: "Notes on biology, computation, making, and useful detours."
 body-classes: blog-page
 format:
   html:
@@ -17,8 +17,12 @@ listing:
 ---
 
 ```{=html}
+<figure class="worlds-visual">
+  <img src="images/small-worlds-large-systems.webp" alt="A handcrafted miniature landscape transitioning from organic cellular structures into a computational and mechanical system">
+</figure>
+
 <div class="blog-intro">
-  <p>Longer notes behind the short posts: research ideas, practical methods, and tools built along the way.</p>
+  <p>Exploring living systems, computational systems, and things we build.</p>
   <nav class="blog-actions" aria-label="Blog and social links">
     <a href="blog.xml"><i class="bi bi-rss" aria-hidden="true"></i> RSS</a>
     <a href="https://www.linkedin.com/in/arashbagherabadi"><i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn</a>

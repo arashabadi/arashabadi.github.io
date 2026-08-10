@@ -9,11 +9,12 @@ project:
     - images/contact-qr.svg
     - images/hero-spatial-layers.webp
     - images/profile-professional.webp
+    - images/small-worlds-large-systems.webp
 
 website:
   title: "Arash Bagherabadi"
   site-url: "https://arashabadi.github.io"
-  description: "Notes on spatial biology, immunology, computation, and building scientific tools."
+  description: "Small Worlds, Large Systems: notes on biology, computation, making, and useful detours."
 
 format:
   html:

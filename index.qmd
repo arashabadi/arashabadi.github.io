@@ -34,8 +34,10 @@ body-classes: home-page
 
       <div class="about-copy">
         <p class="eyebrow">About</p>
-        <h2 id="about-title">Immune biology, understood through space.</h2>
+        <h2 id="about-title">Small Worlds, Large Systems</h2>
+        <p class="about-manifesto">Exploring living systems, computational systems, and things we build.</p>
         <p>I am a PhD student at the University of Alabama at Birmingham focused on immune biology and computational approaches in basic research. My work spans resident memory B cell biology and tertiary lymphoid structures (iBALT) in influenza infection, as well as regulatory T cell metabolism in cancer and obesity contexts, with growing emphasis on single-cell and spatial techniques (e.g., Xenium), reproducible bioinformatics workflows, machine learning, and agentic AI. I am especially interested in applying these tools to vaccine and immunotherapy research.</p>
+        <p class="about-scope">That wider practice also makes room for scientific papers, mathematics, robotics, miniature art, education, and hands-on experiments drawn from everyday life.</p>
         <div class="about-links" aria-label="Explore Arash's work">
           <a href="publications.html">Publications <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
           <a href="projects.html">Projects <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
