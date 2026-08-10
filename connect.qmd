@@ -73,7 +73,7 @@ body-classes: connect-page
     <img src="images/profile-professional.webp" alt="" aria-hidden="true">
     <p class="eyebrow">Contact card</p>
     <h2 id="save-dialog-title">Save Arash to your contacts?</h2>
-    <p>The contact file includes email, website, and research profiles. No phone number is included.</p>
+    <p>The contact file includes this website and Telegram. No phone number is included.</p>
     <a class="dark-action" href="assets/arash-bagherabadi.vcf" autofocus>
       <i class="bi bi-person-plus" aria-hidden="true"></i>
       Save contact

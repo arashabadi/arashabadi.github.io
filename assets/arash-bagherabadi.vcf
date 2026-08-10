@@ -1,18 +1,8 @@
 BEGIN:VCARD
 VERSION:3.0
-N:Bagherabadi;Arash;;;
-FN:Arash Bagherabadi
-NICKNAME:Arash B. Abadi
-ORG:University of Alabama at Birmingham
-TITLE:PhD Student
-EMAIL;TYPE=INTERNET,WORK:abaghera@uab.edu
-EMAIL;TYPE=INTERNET,HOME:arash.bagherabadi@gmail.com
-URL;TYPE=WORK:https://arashabadi.github.io/
-URL;TYPE=LinkedIn:https://www.linkedin.com/in/arashbagherabadi
-URL;TYPE=Google-Scholar:https://scholar.google.com/citations?user=Jk-OzNQAAAAJ&hl=en
-URL;TYPE=ORCID:https://orcid.org/0000-0003-3036-5687
-URL;TYPE=GitHub:https://github.com/arashabadi
-URL;TYPE=X:https://x.com/arash_b_abadi
-NOTE:Spatial biology\, immunology\, and computation.
-REV:20260810T000000Z
+N:Abadi;Arash;;;
+FN:Arash Abadi
+TITLE:PhD Student\, UAB
+URL;TYPE=HOME:https://arashabadi.github.io/
+URL;TYPE=Telegram:https://t.me/arashbioinfo
 END:VCARD
