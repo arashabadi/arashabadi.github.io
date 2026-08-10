@@ -277,13 +277,13 @@ body.connect-page #quarto-content > main#quarto-document-content {
   overflow: hidden;
   position: absolute;
   top: 0;
-  width: 62%;
+  width: 100%;
 }
 
 .hero-visual img {
   height: 100%;
   object-fit: cover;
-  object-position: 25% center;
+  object-position: center;
   width: 100%;
 }
 
@@ -292,13 +292,14 @@ body.connect-page #quarto-content > main#quarto-document-content {
   justify-self: start;
   max-width: 32rem;
   position: relative;
+  transform: translateY(-1.25rem);
   z-index: 2;
 }
 
 .hero-copy h1 {
   color: var(--text);
   font-family: var(--serif);
-  font-size: 4.35rem;
+  font-size: 4.65rem;
   font-weight: 300;
   letter-spacing: 0;
   line-height: 0.94;
@@ -310,18 +311,14 @@ body.connect-page #quarto-content > main#quarto-document-content {
   color: #d9d6cf;
   display: flex;
   font-family: var(--sans);
-  font-size: 1.35rem;
-  font-weight: 500;
-  gap: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 400;
   line-height: 1.25;
   margin-top: 1.2rem;
 }
 
-.alternate-name::before {
-  background: var(--cyan);
-  content: '';
-  flex: 0 0 1.5rem;
-  height: 1px;
+.hero-copy .alternate-name::before {
+  display: none;
 }
 
 .hero-copy p {
@@ -339,7 +336,7 @@ body.connect-page #quarto-content > main#quarto-document-content {
 .hero-copy .hero-umbrella {
   color: var(--text);
   font-family: var(--serif);
-  font-size: 1.48rem;
+  font-size: 1.65rem;
   line-height: 1.2;
   margin-top: 1.55rem;
 }
@@ -381,11 +378,17 @@ body.connect-page #quarto-content > main#quarto-document-content {
 }
 
 .hero-actions .primary-action {
+  border-radius: 8px;
+  justify-content: space-between;
   margin-top: 0;
+  min-height: 3.4rem;
+  min-width: 11.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .hero-github-action {
-  min-width: 7.75rem;
+  min-width: 11rem !important;
 }
 
 .primary-action:hover,
@@ -973,11 +976,15 @@ body.connect-page #quarto-content > main#quarto-document-content {
 .digital-card .alternate-name {
   color: #d0cec8;
   font-size: 1.1rem;
+  gap: 0.75rem;
   margin-top: 1rem;
 }
 
 .digital-card .alternate-name::before {
   background: var(--cyan);
+  content: '';
+  flex: 0 0 1.5rem;
+  height: 1px;
 }
 
 .digital-card-focus {
@@ -1578,6 +1585,46 @@ html[data-theme='light'] .primary-action:focus-visible {
   color: var(--ink);
 }
 
+html[data-theme='light'] body.home-page .site-header:not(.is-scrolled) {
+  background: transparent;
+  border-bottom-color: transparent;
+  color: #f1eee8;
+}
+
+html[data-theme='light'] body.home-page .site-header:not(.is-scrolled) .theme-toggle,
+html[data-theme='light'] body.home-page .site-header:not(.is-scrolled) .site-menu-button {
+  border-color: rgba(241, 238, 232, 0.25);
+}
+
+html[data-theme='light'] .hero {
+  background: #080a0c;
+}
+
+html[data-theme='light'] .hero-copy h1,
+html[data-theme='light'] .hero-copy .hero-umbrella {
+  color: #f1eee8;
+}
+
+html[data-theme='light'] .hero-copy .alternate-name {
+  color: #d9d6cf;
+}
+
+html[data-theme='light'] .hero-copy .hero-fields {
+  color: #aaa9a4;
+}
+
+html[data-theme='light'] .hero .primary-action {
+  border-color: rgba(241, 238, 232, 0.6);
+  color: #f1eee8;
+}
+
+html[data-theme='light'] .hero .primary-action:hover,
+html[data-theme='light'] .hero .primary-action:focus-visible {
+  background: #f1eee8;
+  border-color: #f1eee8;
+  color: #080a0c;
+}
+
 html[data-theme='light'] .projects-band .eyebrow,
 html[data-theme='light'] .connect-copy .eyebrow,
 html[data-theme='light'] .digital-card .eyebrow,
@@ -1633,6 +1680,10 @@ html[data-theme='light'] .card a:focus-visible {
 
   .hero-copy h1 {
     font-size: 4rem;
+  }
+
+  .hero-copy {
+    transform: translateY(-1rem);
   }
 
   .about-band,
@@ -1709,6 +1760,7 @@ html[data-theme='light'] .card a:focus-visible {
   .hero-copy {
     margin-top: 0.5rem;
     max-width: none;
+    transform: none;
   }
 
   .hero-copy h1 {
@@ -1960,6 +2012,12 @@ html[data-theme='light'] .card a:focus-visible {
   .hero-actions .primary-action {
     flex: 1 1 0;
     min-width: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero-actions .hero-github-action {
+    min-width: 0 !important;
   }
 
   .contact-directory,

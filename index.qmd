@@ -1,7 +1,7 @@
 ---
 title: "Arash Bagherabadi"
 description: "Arash Bagherabadi (Arash B. Abadi) explores spatial biology, immunology, computation, scientific machine learning, robotics, and educational making."
-image: images/hero-spatial-layers.webp
+image: images/hero-spatial-girih.webp
 page-layout: full
 title-block-style: none
 body-classes: home-page
@@ -22,7 +22,7 @@ body-classes: home-page
   "mainEntity": { "@id": "https://arashabadi.github.io/#person" },
   "primaryImageOfPage": {
     "@type": "ImageObject",
-    "url": "https://arashabadi.github.io/images/hero-spatial-layers.webp"
+    "url": "https://arashabadi.github.io/images/hero-spatial-girih.webp"
   }
 }
 </script>
@@ -30,7 +30,7 @@ body-classes: home-page
 <div class="home-shell">
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-visual" aria-hidden="true">
-      <img src="images/hero-spatial-layers.webp" alt="" fetchpriority="high">
+      <img src="images/hero-spatial-girih.webp" alt="" fetchpriority="high">
     </div>
 
     <div class="hero-copy">
@@ -43,8 +43,8 @@ body-classes: home-page
           <i class="bi bi-arrow-right" aria-hidden="true"></i>
         </a>
         <a class="primary-action hero-github-action" href="https://github.com/arashabadi" rel="me noopener">
-          <i class="bi bi-github" aria-hidden="true"></i>
           <span>GitHub</span>
+          <i class="bi bi-github" aria-hidden="true"></i>
         </a>
       </div>
     </div>
