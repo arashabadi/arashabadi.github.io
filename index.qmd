@@ -119,7 +119,10 @@ body-classes: home-page
       <div class="project-list">
         <article class="project-row">
           <p class="project-kind">Robotics</p>
-          <div>
+          <figure class="project-thumb">
+            <img src="images/project-elispot-reader.webp" alt="OpenSpotScope ELISPOT plate reader with annotated hardware components" loading="lazy" decoding="async">
+          </figure>
+          <div class="project-copy">
             <h3>ELISPOT Plate Reader Robot</h3>
             <p>A 3D-printed plate reader in development for ELISPOT assays, paired with a vision language model counter and planned as a future open-source release.</p>
           </div>
@@ -127,7 +130,10 @@ body-classes: home-page
         </article>
         <article class="project-row">
           <p class="project-kind">App</p>
-          <div>
+          <figure class="project-thumb">
+            <img src="images/project-cellrank-learning-lab.jpg" alt="CellRank 2 Learning Lab interactive trajectory explorer" loading="lazy" decoding="async">
+          </figure>
+          <div class="project-copy">
             <h3>CellRank 2 Learning Lab</h3>
             <p>An interactive single-cell education app that connects intuitive 3D trajectories to kernels, transition matrices, fate probabilities, slides, notes, and runnable notebooks.</p>
           </div>
@@ -135,7 +141,10 @@ body-classes: home-page
         </article>
         <article class="project-row">
           <p class="project-kind">Education</p>
-          <div>
+          <figure class="project-thumb project-thumb-contain">
+            <img src="images/project-patoq-book.webp" alt="PATOQ book cover combining Persian heritage with bioinformatics and machine learning" loading="lazy" decoding="async">
+          </figure>
+          <div class="project-copy">
             <h3>PATOQ Book</h3>
             <p>A Quarto-based learning resource that curates practical material across bioinformatics, data science, and machine learning.</p>
           </div>
@@ -143,7 +152,10 @@ body-classes: home-page
         </article>
         <article class="project-row">
           <p class="project-kind">Hackathon</p>
-          <div>
+          <figure class="project-thumb project-thumb-contain">
+            <img src="images/project-codefest-embedding-mafia.webp" alt="Embedding Mafia graphic for the CM4AI CodeFest 2025 project" loading="lazy" decoding="async">
+          </figure>
+          <div class="project-copy">
             <h3>CM4AI CodeFest 2025</h3>
             <p>An alternative image-embedding workflow for immunofluorescence data using cell segmentation, preprocessing, and SubCell-based inference.</p>
           </div>

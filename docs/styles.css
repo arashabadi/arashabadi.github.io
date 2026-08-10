@@ -623,11 +623,11 @@ body.connect-page #quarto-content > main#quarto-document-content {
 }
 
 .project-row {
-  align-items: start;
+  align-items: center;
   border-bottom: 1px solid var(--line-dark);
   display: grid;
-  gap: 2rem;
-  grid-template-columns: 7rem minmax(0, 1fr) auto;
+  gap: 1.75rem;
+  grid-template-columns: 6rem minmax(11rem, 15rem) minmax(0, 1fr) auto;
   padding: 1.9rem 0;
 }
 
@@ -640,6 +640,36 @@ body.connect-page #quarto-content > main#quarto-document-content {
   text-transform: uppercase;
 }
 
+.project-kind {
+  align-self: start;
+}
+
+.project-thumb {
+  aspect-ratio: 16 / 10;
+  background: #070a0b;
+  border: 1px solid var(--line-dark);
+  border-radius: 6px;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.project-thumb img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 220ms ease;
+  width: 100%;
+}
+
+.project-thumb-contain img {
+  object-fit: contain;
+}
+
+.project-row:hover .project-thumb img {
+  transform: scale(1.025);
+}
+
 .project-row h3 {
   font-family: var(--serif);
   font-size: 1.7rem;
@@ -648,7 +678,7 @@ body.connect-page #quarto-content > main#quarto-document-content {
   margin: 0;
 }
 
-.project-row div > p {
+.project-copy > p {
   color: #aaa9a4;
   font-size: 0.95rem;
   margin: 0.65rem 0 0;
@@ -1501,6 +1531,61 @@ body:not(.home-page):not(.connect-page) main.content > .content {
   color: var(--green);
 }
 
+.project-card {
+  display: grid;
+  gap: 0;
+  grid-template-columns: minmax(12rem, 17rem) minmax(0, 1fr);
+  overflow: hidden;
+  padding: 0;
+}
+
+.project-card-media {
+  align-self: stretch;
+  aspect-ratio: auto;
+  background: #070a0b;
+  border-right: 1px solid var(--line-dark);
+  margin: 0;
+  min-height: 13rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.project-card-media img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.project-card-media p {
+  height: 100%;
+  margin: 0;
+}
+
+.project-card-media .quarto-figure,
+.project-card-media figure {
+  height: 100%;
+  margin: 0;
+}
+
+.project-card-media figcaption {
+  display: none;
+}
+
+.project-card-media-contain img {
+  object-fit: contain;
+}
+
+.project-card-copy {
+  align-self: center;
+  min-width: 0;
+  padding: 1.5rem;
+}
+
+.project-card-copy a + a {
+  margin-left: 1.25rem;
+}
+
 html[data-theme='light'] {
   --ink: #f6f7f4;
   --ink-soft: #ebefec;
@@ -1556,7 +1641,7 @@ html[data-theme='light'] .about-copy .about-scope,
 html[data-theme='light'] .practice-heading > p,
 html[data-theme='light'] .practice-item p,
 html[data-theme='light'] .projects-intro,
-html[data-theme='light'] .project-row div > p,
+html[data-theme='light'] .project-copy > p,
 html[data-theme='light'] .connect-intro,
 html[data-theme='light'] .blog-page .quarto-post .listing-description {
   color: #59605c;
@@ -1573,6 +1658,11 @@ html[data-theme='light'] .dialog-later {
 
 html[data-theme='light'] .primary-action {
   border-color: rgba(8, 10, 12, 0.55);
+}
+
+html[data-theme='light'] .project-thumb,
+html[data-theme='light'] .project-card-media {
+  background: #eef2ef;
 }
 
 html[data-theme='light'] .primary-action:hover,
@@ -1699,6 +1789,11 @@ html[data-theme='light'] .card a:focus-visible {
 
   .connect-compact .connect-layout {
     gap: 2.5rem;
+  }
+
+  .project-row {
+    gap: 1.25rem;
+    grid-template-columns: 5.25rem minmax(10rem, 12rem) minmax(0, 1fr) auto;
   }
 }
 
@@ -1863,14 +1958,19 @@ html[data-theme='light'] .card a:focus-visible {
   }
 
   .project-row {
-    gap: 0.75rem;
-    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.9rem;
+    grid-template-columns: minmax(0, 1fr);
     padding: 1.6rem 0;
   }
 
   .project-kind,
-  .project-row > div {
+  .project-thumb,
+  .project-copy {
     grid-column: 1 / -1;
+  }
+
+  .project-thumb {
+    aspect-ratio: 16 / 9;
   }
 
   .project-link,
@@ -1878,6 +1978,26 @@ html[data-theme='light'] .card a:focus-visible {
     grid-column: 1;
     justify-self: start;
     margin-top: 0.6rem;
+  }
+
+  .project-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .project-card-media {
+    aspect-ratio: 16 / 9;
+    border-bottom: 1px solid var(--line-dark);
+    border-right: 0;
+    height: auto;
+    min-height: 0;
+  }
+
+  .project-card-copy a {
+    display: table;
+  }
+
+  .project-card-copy a + a {
+    margin-left: 0;
   }
 
   .publications-heading .primary-action {

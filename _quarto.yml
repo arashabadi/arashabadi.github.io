@@ -21,6 +21,10 @@ project:
     - images/publication-ccnd1-idcm.webp
     - images/publication-ntrk1-prostate.webp
     - images/publication-kinase-epigenetic.webp
+    - images/project-elispot-reader.webp
+    - images/project-cellrank-learning-lab.jpg
+    - images/project-patoq-book.webp
+    - images/project-codefest-embedding-mafia.webp
 
 website:
   title: "Arash Bagherabadi"
