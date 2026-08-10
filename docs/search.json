@@ -4,83 +4,83 @@
     "href": "publications.html",
     "title": "Publications",
     "section": "",
-    "text": "Journal: Clinical Epigenetics – Springer Nature Date: October 10, 2025 View Publication →\n\n\n\nJournal: Genes – MDPI\nDate: June 10, 2023 View Publication →\n\n\n\nJournal: Genes – MDPI\nDate: May 8, 2022 View Publication →\n\n\n\nJournal: Pharmaceutics – MDPI\nDate: Feb 25, 2022 View Publication →"
+    "text": "AB\n  \n    \n  \n  \n  \n    \n      \n    \n    \n      Home\n      Publications\n      Projects\n      Blog\n      Connect"
   },
   {
     "objectID": "publications.html#dna-methylation-and-machine-learning-challenges-and-perspective-toward-enhanced-clinical-diagnostics",
     "href": "publications.html#dna-methylation-and-machine-learning-challenges-and-perspective-toward-enhanced-clinical-diagnostics",
     "title": "Publications",
-    "section": "",
-    "text": "Journal: Clinical Epigenetics – Springer Nature Date: October 10, 2025 View Publication →"
+    "section": "DNA methylation and machine learning: challenges and perspective toward enhanced clinical diagnostics",
+    "text": "DNA methylation and machine learning: challenges and perspective toward enhanced clinical diagnostics\nJournal: Clinical Epigenetics – Springer Nature Date: October 10, 2025 View Publication →"
   },
   {
     "objectID": "publications.html#ccnd1-overexpression-in-idiopathic-dilated-cardiomyopathy-a-promising-biomarker",
     "href": "publications.html#ccnd1-overexpression-in-idiopathic-dilated-cardiomyopathy-a-promising-biomarker",
     "title": "Publications",
-    "section": "",
-    "text": "Journal: Genes – MDPI\nDate: June 10, 2023 View Publication →"
+    "section": "CCND1 Overexpression in Idiopathic Dilated Cardiomyopathy: A Promising Biomarker?",
+    "text": "CCND1 Overexpression in Idiopathic Dilated Cardiomyopathy: A Promising Biomarker?\nJournal: Genes – MDPI\nDate: June 10, 2023 View Publication →"
   },
   {
     "objectID": "publications.html#correlation-of-ntrk1-downregulation-with-low-levels-of-tumor-infiltrating-immune-cells-and-poor-prognosis-of-prostate-cancer-revealed-by-gene-network-analysis",
     "href": "publications.html#correlation-of-ntrk1-downregulation-with-low-levels-of-tumor-infiltrating-immune-cells-and-poor-prognosis-of-prostate-cancer-revealed-by-gene-network-analysis",
     "title": "Publications",
-    "section": "",
-    "text": "Journal: Genes – MDPI\nDate: May 8, 2022 View Publication →"
+    "section": "Correlation of NTRK1 Downregulation with Low Levels of Tumor-Infiltrating Immune Cells and Poor Prognosis of Prostate Cancer Revealed by Gene Network Analysis",
+    "text": "Correlation of NTRK1 Downregulation with Low Levels of Tumor-Infiltrating Immune Cells and Poor Prognosis of Prostate Cancer Revealed by Gene Network Analysis\nJournal: Genes – MDPI\nDate: May 8, 2022 View Publication →"
   },
   {
     "objectID": "publications.html#targeting-protein-kinases-and-epigenetic-control-as-combinatorial-therapy-options-for-advanced-prostate-cancer-treatment",
     "href": "publications.html#targeting-protein-kinases-and-epigenetic-control-as-combinatorial-therapy-options-for-advanced-prostate-cancer-treatment",
     "title": "Publications",
-    "section": "",
-    "text": "Journal: Pharmaceutics – MDPI\nDate: Feb 25, 2022 View Publication →"
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "A comprehensive Quarto-based online HTML book for the PATOQ project, providing curated resources for learning Bioinformatics, Data Science, and Machine Learning.\nView Project →\n\n\n\n\n\n\nTeam project from the 2025 CM4AI Hackathon at UAB focused on alternative image-embedding workflows for immunofluorescence data. The work explored cell segmentation, per-cell cropping and preprocessing, and SubCell-based inference to generate embeddings, attention maps, and class probabilities for downstream comparison with the CM4AI pipeline.\nView Repository →\n\n\n\n\n\n\nAn ongoing personal project developing a 3D-printed plate reader for ELISPOT assays with a vision language model (VLM) counter. The project is planned to be published open source and made available online in the future.\nStatus: In progress Availability: Private now; planned open source release"
-  },
-  {
-    "objectID": "projects.html#educational-resources",
-    "href": "projects.html#educational-resources",
-    "title": "Projects",
-    "section": "",
-    "text": "A comprehensive Quarto-based online HTML book for the PATOQ project, providing curated resources for learning Bioinformatics, Data Science, and Machine Learning.\nView Project →"
-  },
-  {
-    "objectID": "projects.html#hackathons",
-    "href": "projects.html#hackathons",
-    "title": "Projects",
-    "section": "",
-    "text": "Team project from the 2025 CM4AI Hackathon at UAB focused on alternative image-embedding workflows for immunofluorescence data. The work explored cell segmentation, per-cell cropping and preprocessing, and SubCell-based inference to generate embeddings, attention maps, and class probabilities for downstream comparison with the CM4AI pipeline.\nView Repository →"
-  },
-  {
-    "objectID": "projects.html#robotics",
-    "href": "projects.html#robotics",
-    "title": "Projects",
-    "section": "",
-    "text": "An ongoing personal project developing a 3D-printed plate reader for ELISPOT assays with a vision language model (VLM) counter. The project is planned to be published open source and made available online in the future.\nStatus: In progress Availability: Private now; planned open source release"
+    "section": "Targeting Protein Kinases and Epigenetic Control as Combinatorial Therapy Options for Advanced Prostate Cancer Treatment",
+    "text": "Targeting Protein Kinases and Epigenetic Control as Combinatorial Therapy Options for Advanced Prostate Cancer Treatment\nJournal: Pharmaceutics – MDPI\nDate: Feb 25, 2022 View Publication →"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Arash Bagherabadi",
     "section": "",
-    "text": "I am a PhD student at the University of Alabama at Birmingham focused on immune biology and computational approaches in basic research. My work spans resident memory B cell biology and tertiary lymphoid structures (iBALT) in influenza infection, as well as regulatory T cell metabolism in cancer and obesity contexts, with growing emphasis on single-cell and spatial techniques (e.g., Xenium), reproducible bioinformatics workflows, machine learning, and agentic AI. I am especially interested in applying these tools to vaccine and immunotherapy research.\n\n\n\n\n  \n    \n    \n      \n      \n        UAB email\n        abaghera@uab.edu\n      \n      \n        \n      \n    \n    \n      \n      \n        Personal email\n        arash.bagherabadi@gmail.com\n      \n      \n        \n      \n    \n  \n  \n    \n    \n      \n      \n        LinkedIn\n        arashbagherabadi\n      \n    \n    \n      \n      \n        Google Scholar\n        Arash Bagherabadi\n      \n    \n    \n      \n      \n        ORCID\n        0000-0003-3036-5687\n      \n    \n    \n      \n      \n        GitHub\n        arashabadi\n      \n    \n    \n      \n      \n        X\n        @arash_b_abadi\n      \n    \n  \n\n\n© 2025 Arash Bagherabadi. All rights reserved. Built using Quarto"
+    "text": "AB\n  \n    \n  \n  \n  \n    \n      \n    \n    \n      Home\n      Publications\n      Projects\n      Blog\n      Connect\n    \n    \n      \n      \n      \n    \n  \n\n\n\n Code\n\n\n\n\n\n  \n    \n      \n    \n\n    \n      ArashBagherabadi (Arash B. Abadi)\n      Spatial Biology · Immunology · Computation\n      \n        Connect\n        \n      \n    \n\n    \n      \n    \n  \n\n  \n    \n      \n        \n      \n\n      \n        About\n        Immune biology, understood through space.\n        I am a PhD student at the University of Alabama at Birmingham focused on immune biology and computational approaches in basic research. My work spans resident memory B cell biology and tertiary lymphoid structures (iBALT) in influenza infection, as well as regulatory T cell metabolism in cancer and obesity contexts, with growing emphasis on single-cell and spatial techniques (e.g., Xenium), reproducible bioinformatics workflows, machine learning, and agentic AI. I am especially interested in applying these tools to vaccine and immunotherapy research.\n        \n          Publications \n          Projects \n          Blog \n        \n      \n    \n  \n\n  \n    \n      \n        Connect\n        Contact, profiles, and a digital card.\n        \n          Open contact card"
   },
   {
-    "objectID": "index.html#about",
-    "href": "index.html#about",
-    "title": "Arash Bagherabadi",
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
     "section": "",
-    "text": "I am a PhD student at the University of Alabama at Birmingham focused on immune biology and computational approaches in basic research. My work spans resident memory B cell biology and tertiary lymphoid structures (iBALT) in influenza infection, as well as regulatory T cell metabolism in cancer and obesity contexts, with growing emphasis on single-cell and spatial techniques (e.g., Xenium), reproducible bioinformatics workflows, machine learning, and agentic AI. I am especially interested in applying these tools to vaccine and immunotherapy research."
+    "text": "AB\n  \n    \n  \n  \n  \n    \n      \n    \n    \n      Home\n      Publications\n      Projects\n      Blog\n      Connect\n    \n    \n      \n      \n      \n    \n  \n\n\n\n\n\n\n  Longer notes behind the short posts: research ideas, practical methods, and tools built along the way.\n  \n     RSS\n     LinkedIn\n     X\n     PATOQ Book\n  \n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "index.html#contact",
-    "href": "index.html#contact",
-    "title": "Arash Bagherabadi",
+    "objectID": "connect.html",
+    "href": "connect.html",
+    "title": "Connect with Arash Bagherabadi",
     "section": "",
-    "text": "UAB email\n        abaghera@uab.edu\n      \n      \n        \n      \n    \n    \n      \n      \n        Personal email\n        arash.bagherabadi@gmail.com\n      \n      \n        \n      \n    \n  \n  \n    \n    \n      \n      \n        LinkedIn\n        arashbagherabadi\n      \n    \n    \n      \n      \n        Google Scholar\n        Arash Bagherabadi\n      \n    \n    \n      \n      \n        ORCID\n        0000-0003-3036-5687\n      \n    \n    \n      \n      \n        GitHub\n        arashabadi\n      \n    \n    \n      \n      \n        X\n        @arash_b_abadi\n      \n    \n  \n\n\n© 2025 Arash Bagherabadi. All rights reserved. Built using Quarto"
+    "text": "AB\n  \n    \n  \n  \n  \n    \n      \n    \n    \n      Home\n      Publications\n      Projects\n      Blog\n      Connect\n    \n    \n      \n      \n      \n    \n  \n\n\n\n Code\n\n\n\n\n\n  \n    \n    Digital contact card\n    Arash Bagherabadi (Arash B. Abadi)\n    Spatial Biology · Immunology · Computation\n    PhD student at the University of Alabama at Birmingham\n\n    \n      \n        \n        Save to contacts\n      \n      \n        \n        Email\n      \n    \n\n    \n      \n        UAB email\n        abaghera@uab.edu\n        \n      \n      \n        Personal email\n        arash.bagherabadi@gmail.com\n        \n      \n      \n        LinkedIn\n        arashbagherabadi\n        \n      \n      \n        Google Scholar\n        Arash Bagherabadi\n        \n      \n      \n        ORCID\n        0000-0003-3036-5687\n        \n      \n      \n        GitHub\n        arashabadi\n        \n      \n      \n        X\n        @arash_b_abadi\n        \n      \n    \n  \n\n  \n    \n      \n    \n    \n    Contact card\n    Save Arash to your contacts?\n    The contact file includes email, website, and research profiles. No phone number is included.\n    \n      \n      Save contact\n    \n    Not now"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "AB\n  \n    \n  \n  \n  \n    \n      \n    \n    \n      Home\n      Publications\n      Projects\n      Blog\n      Connect"
+  },
+  {
+    "objectID": "projects.html#educational-resources",
+    "href": "projects.html#educational-resources",
+    "title": "Projects",
+    "section": "Educational Resources",
+    "text": "Educational Resources\n\nPATOQ Book\nA comprehensive Quarto-based online HTML book for the PATOQ project, providing curated resources for learning Bioinformatics, Data Science, and Machine Learning.\nView Project →"
+  },
+  {
+    "objectID": "projects.html#hackathons",
+    "href": "projects.html#hackathons",
+    "title": "Projects",
+    "section": "Hackathons",
+    "text": "Hackathons\n\nCM4AI CodeFest 2025\nTeam project from the 2025 CM4AI Hackathon at UAB focused on alternative image-embedding workflows for immunofluorescence data. The work explored cell segmentation, per-cell cropping and preprocessing, and SubCell-based inference to generate embeddings, attention maps, and class probabilities for downstream comparison with the CM4AI pipeline.\nView Repository →"
+  },
+  {
+    "objectID": "projects.html#robotics",
+    "href": "projects.html#robotics",
+    "title": "Projects",
+    "section": "Robotics",
+    "text": "Robotics\n\nELISPOT Plate Reader Robot\nAn ongoing personal project developing a 3D-printed plate reader for ELISPOT assays with a vision language model (VLM) counter. The project is planned to be published open source and made available online in the future.\nStatus: In progress Availability: Private now; planned open source release"
   }
 ]

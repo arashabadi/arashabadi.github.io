@@ -1,0 +1,82 @@
+---
+title: "Connect with Arash Bagherabadi"
+page-layout: full
+title-block-style: none
+body-classes: connect-page
+---
+
+```{=html}
+<div class="digital-card-shell">
+  <section class="digital-card" aria-labelledby="digital-card-title">
+    <img class="digital-card-portrait" src="images/profile-professional.webp" alt="Portrait of Arash Bagherabadi">
+    <p class="eyebrow">Digital contact card</p>
+    <h1 id="digital-card-title">Arash Bagherabadi <span class="alternate-name">(Arash B. Abadi)</span></h1>
+    <p class="digital-card-focus">Spatial Biology <span aria-hidden="true">·</span> Immunology <span aria-hidden="true">·</span> Computation</p>
+    <p class="digital-card-role">PhD student at the University of Alabama at Birmingham</p>
+
+    <div class="digital-card-actions">
+      <a class="dark-action" href="assets/arash-bagherabadi.vcf">
+        <i class="bi bi-person-plus" aria-hidden="true"></i>
+        <span>Save to contacts</span>
+      </a>
+      <a class="outline-action" href="mailto:abaghera@uab.edu">
+        <i class="bi bi-envelope" aria-hidden="true"></i>
+        <span>Email</span>
+      </a>
+    </div>
+
+    <div class="digital-link-list" aria-label="Contact details and profiles">
+      <a href="mailto:abaghera@uab.edu">
+        <span>UAB email</span>
+        <strong>abaghera@uab.edu</strong>
+        <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+      </a>
+      <a href="mailto:arash.bagherabadi@gmail.com">
+        <span>Personal email</span>
+        <strong>arash.bagherabadi@gmail.com</strong>
+        <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/arashbagherabadi">
+        <span>LinkedIn</span>
+        <strong>arashbagherabadi</strong>
+        <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+      </a>
+      <a href="https://scholar.google.com/citations?user=Jk-OzNQAAAAJ&amp;hl=en">
+        <span>Google Scholar</span>
+        <strong>Arash Bagherabadi</strong>
+        <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+      </a>
+      <a href="https://orcid.org/0000-0003-3036-5687">
+        <span>ORCID</span>
+        <strong>0000-0003-3036-5687</strong>
+        <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+      </a>
+      <a href="https://github.com/arashabadi">
+        <span>GitHub</span>
+        <strong>arashabadi</strong>
+        <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+      </a>
+      <a href="https://x.com/arash_b_abadi">
+        <span>X</span>
+        <strong>@arash_b_abadi</strong>
+        <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+      </a>
+    </div>
+  </section>
+
+  <dialog class="contact-save-dialog" id="save-contact-dialog" aria-labelledby="save-dialog-title">
+    <button class="dialog-close" type="button" data-dialog-close aria-label="Close save contact prompt" title="Close">
+      <i class="bi bi-x-lg" aria-hidden="true"></i>
+    </button>
+    <img src="images/profile-professional.webp" alt="" aria-hidden="true">
+    <p class="eyebrow">Contact card</p>
+    <h2 id="save-dialog-title">Save Arash to your contacts?</h2>
+    <p>The contact file includes email, website, and research profiles. No phone number is included.</p>
+    <a class="dark-action" href="assets/arash-bagherabadi.vcf" autofocus>
+      <i class="bi bi-person-plus" aria-hidden="true"></i>
+      Save contact
+    </a>
+    <button class="dialog-later" type="button" data-dialog-close>Not now</button>
+  </dialog>
+</div>
+```

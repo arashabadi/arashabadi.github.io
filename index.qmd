@@ -1,87 +1,67 @@
 ---
 title: "Arash Bagherabadi"
+page-layout: full
+title-block-style: none
+body-classes: home-page
 ---
 
-::: {.content}
-::: {.profile-image}
-![](images/profile.PNG){.profile-pic}
-:::
-
-## About
-
-I am a PhD student at the University of Alabama at Birmingham focused on immune biology and computational approaches in basic research. My work spans resident memory B cell biology and tertiary lymphoid structures (iBALT) in influenza infection, as well as regulatory T cell metabolism in cancer and obesity contexts, with growing emphasis on single-cell and spatial techniques (e.g., Xenium), reproducible bioinformatics workflows, machine learning, and agentic AI. I am especially interested in applying these tools to vaccine and immunotherapy research.
-
-## Contact
-
 ```{=html}
-<div class="contact-grid">
-  <section class="contact-group" aria-labelledby="contact-email">
-    <h3 id="contact-email">Email</h3>
-    <div class="contact-row contact-row-copy">
-      <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-      <a class="contact-link" href="mailto:abaghera@uab.edu" aria-label="Email Arash Bagherabadi at UAB">
-        <span class="contact-label">UAB email</span>
-        <span class="contact-value">abaghera@uab.edu</span>
-      </a>
-      <button class="copy-button" type="button" data-copy-value="abaghera@uab.edu" onclick="copyContactValue(this)" aria-label="Copy UAB email" title="Copy UAB email">
-        <i class="fa-solid fa-copy" aria-hidden="true"></i>
-      </button>
+<div class="home-shell">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-visual" aria-hidden="true">
+      <img src="images/hero-spatial-layers.webp" alt="" fetchpriority="high">
     </div>
-    <div class="contact-row contact-row-copy">
-      <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-      <a class="contact-link" href="mailto:arash.bagherabadi@gmail.com" aria-label="Email Arash Bagherabadi at personal email">
-        <span class="contact-label">Personal email</span>
-        <span class="contact-value">arash.bagherabadi@gmail.com</span>
+
+    <div class="hero-copy">
+      <h1 id="hero-title">Arash<br>Bagherabadi <span class="alternate-name">(Arash B. Abadi)</span></h1>
+      <p>Spatial Biology <span aria-hidden="true">·</span> Immunology <span aria-hidden="true">·</span> Computation</p>
+      <a class="primary-action no-external" href="connect.html" target="_self">
+        <span>Connect</span>
+        <i class="bi bi-arrow-right" aria-hidden="true"></i>
       </a>
-      <button class="copy-button" type="button" data-copy-value="arash.bagherabadi@gmail.com" onclick="copyContactValue(this)" aria-label="Copy personal email" title="Copy personal email">
-        <i class="fa-solid fa-copy" aria-hidden="true"></i>
-      </button>
+    </div>
+
+    <a class="scroll-cue" href="#about" aria-label="Continue to About">
+      <i class="bi bi-arrow-down" aria-hidden="true"></i>
+    </a>
+  </section>
+
+  <section class="about-band" id="about" aria-labelledby="about-title">
+    <div class="section-inner about-layout">
+      <figure class="portrait-frame">
+        <img src="images/profile-professional.webp" alt="Portrait of Arash Bagherabadi" loading="lazy">
+      </figure>
+
+      <div class="about-copy">
+        <p class="eyebrow">About</p>
+        <h2 id="about-title">Immune biology, understood through space.</h2>
+        <p>I am a PhD student at the University of Alabama at Birmingham focused on immune biology and computational approaches in basic research. My work spans resident memory B cell biology and tertiary lymphoid structures (iBALT) in influenza infection, as well as regulatory T cell metabolism in cancer and obesity contexts, with growing emphasis on single-cell and spatial techniques (e.g., Xenium), reproducible bioinformatics workflows, machine learning, and agentic AI. I am especially interested in applying these tools to vaccine and immunotherapy research.</p>
+        <div class="about-links" aria-label="Explore Arash's work">
+          <a href="publications.html">Publications <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+          <a href="projects.html">Projects <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+          <a href="blog.html">Blog <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
     </div>
   </section>
-  <section class="contact-group" aria-labelledby="contact-profiles">
-    <h3 id="contact-profiles">Profiles</h3>
-    <a class="contact-row" href="https://www.linkedin.com/in/arashbagherabadi" target="_blank" rel="noopener" aria-label="Arash Bagherabadi on LinkedIn">
-      <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-      <span>
-        <span class="contact-label">LinkedIn</span>
-        <span class="contact-value">arashbagherabadi</span>
-      </span>
-    </a>
-    <a class="contact-row" href="https://scholar.google.com/citations?user=Jk-OzNQAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Arash Bagherabadi on Google Scholar">
-      <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-      <span>
-        <span class="contact-label">Google Scholar</span>
-        <span class="contact-value">Arash Bagherabadi</span>
-      </span>
-    </a>
-    <a class="contact-row" href="https://orcid.org/0000-0003-3036-5687" target="_blank" rel="noopener" aria-label="Arash Bagherabadi ORCID profile">
-      <i class="fa-solid fa-id-card" aria-hidden="true"></i>
-      <span>
-        <span class="contact-label">ORCID</span>
-        <span class="contact-value">0000-0003-3036-5687</span>
-      </span>
-    </a>
-    <a class="contact-row" href="https://github.com/arashabadi" target="_blank" rel="noopener" aria-label="Arash Bagherabadi on GitHub">
-      <i class="fa-brands fa-github" aria-hidden="true"></i>
-      <span>
-        <span class="contact-label">GitHub</span>
-        <span class="contact-value">arashabadi</span>
-      </span>
-    </a>
-    <a class="contact-row" href="https://x.com/arash_b_abadi" target="_blank" rel="noopener" aria-label="Arash Bagherabadi on X">
-      <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-      <span>
-        <span class="contact-label">X</span>
-        <span class="contact-value">@arash_b_abadi</span>
-      </span>
-    </a>
+
+  <section class="connect-band connect-compact" id="connect" aria-labelledby="connect-title">
+    <div class="section-inner connect-layout">
+      <div class="connect-copy">
+        <p class="eyebrow">Connect</p>
+        <h2 id="connect-title">Contact, profiles, and a digital card.</h2>
+        <a class="dark-action no-external" href="connect.html" target="_self">
+          <span>Open contact card</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <a class="qr-tool no-external" href="connect.html" target="_self" aria-label="Open Arash Bagherabadi's digital contact card">
+        <div class="qr-frame">
+          <img src="images/contact-qr.svg" alt="QR code for the digital contact card" loading="lazy">
+        </div>
+      </a>
+    </div>
   </section>
 </div>
 ```
-
-::: {.footer}
-© 2025 Arash Bagherabadi. All rights reserved.
-Built using [Quarto](https://quarto.org/) {{< fa heart >}} 
-:::
-
-:::

@@ -1,0 +1,83 @@
+<footer class="site-footer">
+  <a class="site-footer-mark" href="index.html">AB</a>
+  <nav aria-label="Footer navigation">
+    <a href="publications.html">Publications</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a class="no-external" href="connect.html" target="_self">Connect</a>
+  </nav>
+  <p>&copy; 2026 Arash Bagherabadi</p>
+</footer>
+
+<script>
+(function () {
+  const body = document.body;
+  const header = document.querySelector('[data-site-header]');
+  const menu = document.getElementById('site-menu');
+  const menuButton = document.querySelector('.site-menu-button');
+  const menuClosers = document.querySelectorAll('[data-menu-close]');
+
+  function setMenu(open) {
+    if (!menu || !menuButton) return;
+    body.classList.toggle('menu-open', open);
+    menu.classList.toggle('is-open', open);
+    menu.setAttribute('aria-hidden', String(!open));
+    menuButton.setAttribute('aria-expanded', String(open));
+    menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    if (open) {
+      const firstLink = menu.querySelector('a');
+      window.setTimeout(function () { firstLink && firstLink.focus(); }, 150);
+    } else {
+      menuButton.focus({ preventScroll: true });
+    }
+  }
+
+  menuButton && menuButton.addEventListener('click', function () {
+    setMenu(menuButton.getAttribute('aria-expanded') !== 'true');
+  });
+  menuClosers.forEach(function (closer) {
+    closer.addEventListener('click', function () { setMenu(false); });
+  });
+  menu && menu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () { setMenu(false); });
+  });
+
+  window.addEventListener('scroll', function () {
+    header && header.classList.toggle('is-scrolled', window.scrollY > 24);
+  }, { passive: true });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      setMenu(false);
+      const dialog = document.getElementById('save-contact-dialog');
+      if (dialog && dialog.open) dialog.close();
+    }
+  });
+
+  const dialog = document.getElementById('save-contact-dialog');
+  if (dialog) {
+    let promptScrollY = window.scrollY;
+    dialog.querySelectorAll('[data-dialog-close]').forEach(function (button) {
+      button.addEventListener('click', function () { dialog.close(); });
+    });
+    dialog.addEventListener('click', function (event) {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener('close', function () {
+      window.scrollTo(0, promptScrollY);
+    });
+
+    const mobileLike = window.matchMedia('(pointer: coarse)').matches || window.innerWidth <= 900;
+    const forcePrompt = new URLSearchParams(window.location.search).get('prompt') === '1';
+    if (mobileLike && (forcePrompt || !window.sessionStorage.getItem('arash-contact-prompt-seen'))) {
+      if (!forcePrompt) window.sessionStorage.setItem('arash-contact-prompt-seen', 'true');
+      window.setTimeout(function () {
+        promptScrollY = window.scrollY;
+        dialog.showModal();
+        const saveAction = dialog.querySelector('.dark-action');
+        saveAction && saveAction.focus({ preventScroll: true });
+      }, 550);
+    }
+  }
+})();
+</script>

@@ -1,36 +1,32 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "posts/**/*.qmd"
+  resources:
+    - assets/arash-bagherabadi.vcf
+    - images/contact-qr.svg
+    - images/hero-spatial-layers.webp
+    - images/profile-professional.webp
 
 website:
   title: "Arash Bagherabadi"
-  navbar:
-    title: false
-    left:
-      - href: index.qmd
-        text: Home
-      - href: publications.qmd
-        text: Publications
-      - href: projects.qmd
-        text: Projects
-    right:
-      - icon: github
-        href: https://github.com/arashabadi
-      - icon: linkedin
-        href: https://linkedin.com/in/arashbagherabadi
-      - icon: twitter-x
-        href: https://x.com/arash_b_abadi
+  site-url: "https://arashabadi.github.io"
+  description: "Notes on spatial biology, immunology, computation, and building scientific tools."
 
 format:
   html:
     theme: cosmo
     css: styles.css
-    include-after-body: theme-toggle.html
+    include-before-body: site-header.html
+    include-after-body: site-after-body.html
     toc: false
     code-fold: true
     code-tools: true
-    self-contained: true
-    link-external-icon: true
+    self-contained: false
+    anchor-sections: false
+    link-external-icon: false
     link-external-newwindow: true
 
 execute:
