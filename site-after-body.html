@@ -1,9 +1,9 @@
 <footer class="site-footer">
-  <a class="site-footer-mark" href="index.html">AB</a>
+  <a class="site-footer-mark no-external" href="index.html" target="_self">AB</a>
   <nav aria-label="Footer navigation">
-    <a href="publications.html">Publications</a>
-    <a href="projects.html">Projects</a>
-    <a href="blog.html">Blog</a>
+    <a class="no-external" href="index.html#projects" target="_self">Projects</a>
+    <a class="no-external" href="index.html#publications" target="_self">Publications</a>
+    <a class="no-external" href="blog.html" target="_self">Blog</a>
     <a class="no-external" href="connect.html" target="_self">Connect</a>
   </nav>
   <p>&copy; 2026 Arash Bagherabadi</p>
@@ -16,6 +16,31 @@
   const menu = document.getElementById('site-menu');
   const menuButton = document.querySelector('.site-menu-button');
   const menuClosers = document.querySelectorAll('[data-menu-close]');
+  const themeButton = document.querySelector('.theme-toggle');
+
+  function setTheme(theme, persist) {
+    const light = theme === 'light';
+    document.documentElement.dataset.theme = light ? 'light' : 'dark';
+    if (themeButton) {
+      const label = light ? 'Use dark theme' : 'Use light theme';
+      const icon = themeButton.querySelector('i');
+      themeButton.setAttribute('aria-label', label);
+      themeButton.setAttribute('title', label);
+      if (icon) icon.className = light ? 'bi bi-moon-stars' : 'bi bi-sun';
+    }
+    if (persist) {
+      try {
+        window.localStorage.setItem('arash-site-theme', light ? 'light' : 'dark');
+      } catch (error) {
+        // Theme switching still works for the current page.
+      }
+    }
+  }
+
+  setTheme(document.documentElement.dataset.theme === 'light' ? 'light' : 'dark', false);
+  themeButton && themeButton.addEventListener('click', function () {
+    setTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light', true);
+  });
 
   function setMenu(open) {
     if (!menu || !menuButton) return;

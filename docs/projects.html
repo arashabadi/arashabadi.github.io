@@ -115,21 +115,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     
 <!-- main -->
 <main class="content" id="quarto-document-content">
+<script>
+(function () {
+  try {
+    if (window.localStorage.getItem('arash-site-theme') === 'light') {
+      document.documentElement.dataset.theme = 'light';
+    }
+  } catch (error) {
+    // The dark default remains available when storage is blocked.
+  }
+})();
+</script>
+
 <header class="site-header" data-site-header="">
-  <a class="site-wordmark" href="index.html" aria-label="Arash Bagherabadi home">AB</a>
-  <button class="site-menu-button" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation" title="Menu">
-    <i class="bi bi-list" aria-hidden="true"></i>
-  </button>
+  <a class="site-wordmark no-external" href="index.html" target="_self" aria-label="Arash Bagherabadi home">AB</a>
+  <div class="site-header-actions">
+    <button class="theme-toggle" type="button" aria-label="Use light theme" title="Use light theme">
+      <i class="bi bi-sun" aria-hidden="true"></i>
+    </button>
+    <button class="site-menu-button" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation" title="Menu">
+      <i class="bi bi-list" aria-hidden="true"></i>
+    </button>
+  </div>
   <div class="site-menu-backdrop" data-menu-close=""></div>
   <nav class="site-menu" id="site-menu" aria-label="Primary navigation" aria-hidden="true">
     <button class="site-menu-close" type="button" data-menu-close="" aria-label="Close navigation" title="Close">
       <i class="bi bi-x-lg" aria-hidden="true"></i>
     </button>
     <div class="site-menu-links">
-      <a href="index.html">Home</a>
-      <a href="publications.html">Publications</a>
-      <a href="projects.html">Projects</a>
-      <a href="blog.html">Blog</a>
+      <a class="no-external" href="index.html#about" target="_self">About</a>
+      <a class="no-external" href="index.html#practice" target="_self">What I do</a>
+      <a class="no-external" href="index.html#projects" target="_self">Projects</a>
+      <a class="no-external" href="index.html#publications" target="_self">Publications</a>
+      <a class="no-external" href="blog.html" target="_self">Blog</a>
       <a class="no-external" href="connect.html" target="_self">Connect</a>
     </div>
     <div class="site-menu-social">
@@ -160,6 +178,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div class="content">
+<div class="archive-intro">
+<p>This is the durable home for things I build: research tools, laboratory hardware, apps, interactive educational work, books, and open experiments. As a project grows, its page can hold the full design, development history, documentation, and releases; related blog posts can tell the smaller stories along the way.</p>
+</div>
 <section id="educational-resources" class="level2 section-heading">
 <h2 class="section-heading" data-anchor-id="educational-resources">Educational Resources</h2>
 <section id="patoq-book" class="level3 card">
@@ -192,11 +213,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </main> <!-- /main -->
 <footer class="site-footer">
-  <a class="site-footer-mark" href="index.html">AB</a>
+  <a class="site-footer-mark no-external" href="index.html" target="_self">AB</a>
   <nav aria-label="Footer navigation">
-    <a href="publications.html">Publications</a>
-    <a href="projects.html">Projects</a>
-    <a href="blog.html">Blog</a>
+    <a class="no-external" href="index.html#projects" target="_self">Projects</a>
+    <a class="no-external" href="index.html#publications" target="_self">Publications</a>
+    <a class="no-external" href="blog.html" target="_self">Blog</a>
     <a class="no-external" href="connect.html" target="_self">Connect</a>
   </nav>
   <p>© 2026 Arash Bagherabadi</p>
@@ -209,6 +230,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   const menu = document.getElementById('site-menu');
   const menuButton = document.querySelector('.site-menu-button');
   const menuClosers = document.querySelectorAll('[data-menu-close]');
+  const themeButton = document.querySelector('.theme-toggle');
+
+  function setTheme(theme, persist) {
+    const light = theme === 'light';
+    document.documentElement.dataset.theme = light ? 'light' : 'dark';
+    if (themeButton) {
+      const label = light ? 'Use dark theme' : 'Use light theme';
+      const icon = themeButton.querySelector('i');
+      themeButton.setAttribute('aria-label', label);
+      themeButton.setAttribute('title', label);
+      if (icon) icon.className = light ? 'bi bi-moon-stars' : 'bi bi-sun';
+    }
+    if (persist) {
+      try {
+        window.localStorage.setItem('arash-site-theme', light ? 'light' : 'dark');
+      } catch (error) {
+        // Theme switching still works for the current page.
+      }
+    }
+  }
+
+  setTheme(document.documentElement.dataset.theme === 'light' ? 'light' : 'dark', false);
+  themeButton && themeButton.addEventListener('click', function () {
+    setTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light', true);
+  });
 
   function setMenu(open) {
     if (!menu || !menuButton) return;
@@ -728,35 +774,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>::: {.content}</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Educational Resources {.section-heading}</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>::: {.card}</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">### PATOQ Book</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>A comprehensive Quarto-based online HTML book for the PATOQ project, providing curated resources for learning Bioinformatics, Data Science, and Machine Learning.</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>::: {.archive-intro}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>This is the durable home for things I build: research tools, laboratory hardware, apps, interactive educational work, books, and open experiments. As a project grows, its page can hold the full design, development history, documentation, and releases; related blog posts can tell the smaller stories along the way.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">## Educational Resources {.section-heading}</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">View Project →</span><span class="co">](https://arashabadi.github.io/patoq/)</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Hackathons {.section-heading}</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>::: {.card}</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">### CM4AI CodeFest 2025</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Team project from the 2025 CM4AI Hackathon at UAB focused on alternative image-embedding workflows for immunofluorescence data. The work explored cell segmentation, per-cell cropping and preprocessing, and SubCell-based inference to generate embeddings, attention maps, and class probabilities for downstream comparison with the CM4AI pipeline.</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>::: {.card}</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">### PATOQ Book</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>A comprehensive Quarto-based online HTML book for the PATOQ project, providing curated resources for learning Bioinformatics, Data Science, and Machine Learning.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">View Project →</span><span class="co">](https://arashabadi.github.io/patoq/)</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Hackathons {.section-heading}</span></span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">View Repository →</span><span class="co">](https://github.com/arashabadi/cm4ai_codefest2025)</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Robotics {.section-heading}</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>::: {.card}</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu">### ELISPOT Plate Reader Robot</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>An ongoing personal project developing a 3D-printed plate reader for ELISPOT assays with a vision language model (VLM) counter. The project is planned to be published open source and made available online in the future.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>::: {.card}</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">### CM4AI CodeFest 2025</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Team project from the 2025 CM4AI Hackathon at UAB focused on alternative image-embedding workflows for immunofluorescence data. The work explored cell segmentation, per-cell cropping and preprocessing, and SubCell-based inference to generate embeddings, attention maps, and class probabilities for downstream comparison with the CM4AI pipeline.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">View Repository →</span><span class="co">](https://github.com/arashabadi/cm4ai_codefest2025)</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## Robotics {.section-heading}</span></span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>**Status:** In progress<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>**Availability:** Private now; planned open source release</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>::: {.card}</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">### ELISPOT Plate Reader Robot</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>An ongoing personal project developing a 3D-printed plate reader for ELISPOT assays with a vision language model (VLM) counter. The project is planned to be published open source and made available online in the future.</span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>**Status:** In progress<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>**Availability:** Private now; planned open source release</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

@@ -4,6 +4,10 @@ title: "Projects"
 
 ::: {.content}
 
+::: {.archive-intro}
+This is the durable home for things I build: research tools, laboratory hardware, apps, interactive educational work, books, and open experiments. As a project grows, its page can hold the full design, development history, documentation, and releases; related blog posts can tell the smaller stories along the way.
+:::
+
 ## Educational Resources {.section-heading}
 
 ::: {.card}
