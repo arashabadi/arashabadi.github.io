@@ -18,6 +18,17 @@ A comprehensive Quarto-based online HTML book for the PATOQ project, providing c
 [View Project →](https://arashabadi.github.io/patoq/)
 :::
 
+## Apps {.section-heading}
+
+::: {.card}
+### CellRank 2 Learning Lab
+An interactive educational app for learning how CellRank 2 turns neighborhood graphs into directional transitions, macrostates, and fate probabilities. The lab combines a high-contrast 3D explorer, kernel intuition and formulas, Python input maps, slides, papers, notes, and runnable notebooks.
+
+[Launch App →](https://arashabadi.github.io/cellrank2-learning-lab/)
+
+[View Repository →](https://github.com/arashabadi/cellrank2-learning-lab)
+:::
+
 ## Hackathons {.section-heading}
 
 ::: {.card}

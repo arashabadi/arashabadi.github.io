@@ -25,7 +25,7 @@
     "href": "connect.html",
     "title": "Connect with Arash Bagherabadi",
     "section": "",
-    "text": "AB\n  \n    \n      \n    \n    \n      \n    \n  \n  \n  \n    \n      \n    \n    \n      About\n      What I do\n      Projects\n      Publications\n      Blog\n      Connect\n    \n    \n      \n      \n      \n    \n  \n\n\n\n\n\n\n\n\n\n  \n    \n    Digital contact card\n    Arash Bagherabadi (Arash B. Abadi)\n    Spatial Biology · Immunology · Computation\n    PhD student at the University of Alabama at Birmingham\n\n    \n      \n        \n        Save to contacts\n      \n      \n        \n        Email\n      \n    \n\n    \n      \n        UAB email\n        abaghera@uab.edu\n        \n      \n      \n        Personal email\n        arash.bagherabadi@gmail.com\n        \n      \n      \n        LinkedIn\n        arashbagherabadi\n        \n      \n      \n        Google Scholar\n        Arash Bagherabadi\n        \n      \n      \n        ORCID\n        0000-0003-3036-5687\n        \n      \n      \n        GitHub\n        arashabadi\n        \n      \n      \n        X\n        @arash_b_abadi\n        \n      \n    \n  \n\n  \n    \n      \n    \n    \n    Contact card\n    Save Arash to your contacts?\n    The contact file includes email, website, and research profiles. No phone number is included.\n    \n      \n      Save contact\n    \n    Not now"
+    "text": "AB\n  \n    \n      \n    \n    \n      \n    \n  \n  \n  \n    \n      \n    \n    \n      About\n      What I do\n      Projects\n      Publications\n      Blog\n      Connect\n    \n    \n      \n      \n      \n    \n  \n\n\n\n\n\n\n\n\n\n  \n    \n    Digital contact card\n    Arash Bagherabadi (Arash B. Abadi)\n    Spatial Biology · Immunology · Computation\n    PhD student at the University of Alabama at Birmingham\n\n    \n      \n        \n        Save to contacts\n      \n      \n        \n        Email\n      \n    \n\n    \n      \n        UAB email\n        abaghera@uab.edu\n        \n      \n      \n        Personal email\n        arash.bagherabadi@gmail.com\n        \n      \n      \n        LinkedIn\n        arashbagherabadi\n        \n      \n      \n        Google Scholar\n        Arash Bagherabadi\n        \n      \n      \n        ORCID\n        0000-0003-3036-5687\n        \n      \n      \n        GitHub\n        arashabadi\n        \n      \n      \n        X\n        @arash_b_abadi\n        \n      \n    \n  \n\n  \n    \n      \n    \n    \n    Contact card\n    Save Arash to your contacts?\n    The contact file includes this website and Telegram. No phone number is included.\n    \n      \n      Save contact\n    \n    Not now"
   },
   {
     "objectID": "projects.html#educational-resources",
@@ -33,6 +33,13 @@
     "title": "Projects",
     "section": "Educational Resources",
     "text": "Educational Resources\n\nPATOQ Book\nA comprehensive Quarto-based online HTML book for the PATOQ project, providing curated resources for learning Bioinformatics, Data Science, and Machine Learning.\nView Project →"
+  },
+  {
+    "objectID": "projects.html#apps",
+    "href": "projects.html#apps",
+    "title": "Projects",
+    "section": "Apps",
+    "text": "Apps\n\nCellRank 2 Learning Lab\nAn interactive educational app for learning how CellRank 2 turns neighborhood graphs into directional transitions, macrostates, and fate probabilities. The lab combines a high-contrast 3D explorer, kernel intuition and formulas, Python input maps, slides, papers, notes, and runnable notebooks.\nLaunch App →\nView Repository →"
   },
   {
     "objectID": "projects.html#hackathons",
