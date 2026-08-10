@@ -1245,12 +1245,6 @@ body:not(.home-page):not(.connect-page) main.content > .content {
   transform: translateY(0);
 }
 
-.publication-summary {
-  color: #aaa9a4;
-  font-size: 0.96rem;
-  margin: 1rem 0 0;
-}
-
 .publication-open {
   align-items: center;
   border-bottom: 1px solid currentColor;
@@ -1264,13 +1258,6 @@ body:not(.home-page):not(.connect-page) main.content > .content {
 .publication-open:hover,
 .publication-open:focus-visible {
   color: var(--cyan);
-}
-
-.publication-credit {
-  color: #777d79;
-  font-size: 0.7rem;
-  line-height: 1.45;
-  margin: 1.15rem 0 0;
 }
 
 .blog-intro {
@@ -1571,7 +1558,6 @@ html[data-theme='light'] .practice-item p,
 html[data-theme='light'] .projects-intro,
 html[data-theme='light'] .project-row div > p,
 html[data-theme='light'] .connect-intro,
-html[data-theme='light'] .publication-summary,
 html[data-theme='light'] .blog-page .quarto-post .listing-description {
   color: #59605c;
 }
@@ -1583,10 +1569,6 @@ html[data-theme='light'] .digital-link-list span,
 html[data-theme='light'] .contact-save-dialog p:not(.eyebrow),
 html[data-theme='light'] .dialog-later {
   color: #626965;
-}
-
-html[data-theme='light'] .publication-credit {
-  color: #6d7470;
 }
 
 html[data-theme='light'] .primary-action {
