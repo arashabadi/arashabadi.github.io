@@ -9,7 +9,12 @@
 <link>https://arashabadi.github.io/blog.html</link>
 <atom:link href="https://arashabadi.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Notes on biology, computation, making, and useful detours.</description>
+<image>
+<url>https://arashabadi.github.io/images/small-worlds-large-systems.webp</url>
+<title>Arash Bagherabadi</title>
+<link>https://arashabadi.github.io/blog.html</link>
+</image>
 <generator>quarto-1.7.32</generator>
-<lastBuildDate>Mon, 10 Aug 2026 20:56:22 GMT</lastBuildDate>
+<lastBuildDate>Mon, 10 Aug 2026 21:14:02 GMT</lastBuildDate>
 </channel>
 </rss>

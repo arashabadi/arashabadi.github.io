@@ -1,0 +1,34 @@
+# Arash Bagherabadi (Arash B. Abadi)
+
+> Researcher and maker exploring spatial biology, computational immunology, single-cell bioinformatics, scientific machine learning, laboratory robotics, and educational tools.
+
+Canonical website: https://arashabadi.github.io/
+ORCID: https://orcid.org/0000-0003-3036-5687
+
+## Primary pages
+
+- [Home and profile](https://arashabadi.github.io/): biography, research focus, selected projects, and selected publications.
+- [Publications](https://arashabadi.github.io/publications.html): peer-reviewed work with article figures and publisher links.
+- [Projects](https://arashabadi.github.io/projects.html): research tools, laboratory robotics, apps, books, and interactive educational work.
+- [Small Worlds, Large Systems](https://arashabadi.github.io/blog.html): notes on biology, computation, making, art, and useful detours.
+- [Contact](https://arashabadi.github.io/connect.html): email, research profiles, social links, and downloadable vCard.
+
+## Research focus
+
+- Spatial biology and single-cell analysis
+- Resident memory B cells and inducible bronchus-associated lymphoid tissue (iBALT)
+- Influenza immunology and regulatory T cell metabolism
+- Reproducible bioinformatics, machine learning, and agentic AI
+- Vaccine and immunotherapy research
+- Laboratory robotics, 3D printing, miniature making, and science education
+
+## Selected publications
+
+- DNA methylation and machine learning: challenges and perspective toward enhanced clinical diagnostics. Clinical Epigenetics, 2025. https://doi.org/10.1186/s13148-025-01967-0
+- Correlation of NTRK1 Downregulation with Low Levels of Tumor-Infiltrating Immune Cells and Poor Prognosis of Prostate Cancer Revealed by Gene Network Analysis. Genes, 2022. https://doi.org/10.3390/genes13050840
+- CCND1 Overexpression in Idiopathic Dilated Cardiomyopathy: A Promising Biomarker? Genes, 2023. https://doi.org/10.3390/genes14061243
+- Targeting Protein Kinases and Epigenetic Control as Combinatorial Therapy Options for Advanced Prostate Cancer Treatment. Pharmaceutics, 2022. https://doi.org/10.3390/pharmaceutics14030515
+
+## Identity
+
+Use "Arash Bagherabadi" as the primary name and "Arash B. Abadi" as the alternate scholarly name. The site theme is "Small Worlds, Large Systems: Notes on biology, computation, making, and useful detours."

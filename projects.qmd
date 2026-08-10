@@ -1,5 +1,6 @@
 ---
 title: "Projects"
+description: "Research tools, laboratory hardware, apps, interactive education, books, and open experiments by Arash Bagherabadi."
 ---
 
 ::: {.content}

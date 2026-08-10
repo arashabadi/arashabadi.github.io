@@ -5,16 +5,26 @@ project:
     - "*.qmd"
     - "posts/**/*.qmd"
   resources:
+    - robots.txt
+    - llms.txt
     - assets/arash-bagherabadi.vcf
     - images/contact-qr.svg
     - images/hero-spatial-layers.webp
     - images/profile-professional.webp
     - images/small-worlds-large-systems.webp
+    - images/publication-dna-methylation-ml.webp
+    - images/publication-ccnd1-idcm.webp
+    - images/publication-ntrk1-prostate.webp
+    - images/publication-kinase-epigenetic.webp
 
 website:
   title: "Arash Bagherabadi"
   site-url: "https://arashabadi.github.io"
-  description: "Small Worlds, Large Systems: notes on biology, computation, making, and useful detours."
+  description: "Arash Bagherabadi (Arash B. Abadi): spatial biology, computational immunology, single-cell bioinformatics, scientific machine learning, laboratory robotics, and educational making."
+  open-graph: true
+  twitter-card: true
+
+lang: en
 
 format:
   html:
@@ -23,8 +33,8 @@ format:
     include-before-body: site-header.html
     include-after-body: site-after-body.html
     toc: false
-    code-fold: true
-    code-tools: true
+    code-fold: false
+    code-tools: false
     self-contained: false
     anchor-sections: false
     link-external-icon: false

@@ -1,6 +1,7 @@
 ---
 title: "Small Worlds, Large Systems"
 description: "Notes on biology, computation, making, and useful detours."
+image: images/small-worlds-large-systems.webp
 body-classes: blog-page
 format:
   html:

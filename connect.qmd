@@ -1,5 +1,7 @@
 ---
 title: "Connect with Arash Bagherabadi"
+description: "Contact Arash Bagherabadi and find his email, ORCID, Google Scholar, GitHub, LinkedIn, X, and downloadable digital contact card."
+image: images/profile-professional.webp
 page-layout: full
 title-block-style: none
 body-classes: connect-page
@@ -36,27 +38,27 @@ body-classes: connect-page
         <strong>arash.bagherabadi@gmail.com</strong>
         <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
       </a>
-      <a href="https://www.linkedin.com/in/arashbagherabadi">
+      <a href="https://www.linkedin.com/in/arashbagherabadi" rel="me">
         <span>LinkedIn</span>
         <strong>arashbagherabadi</strong>
         <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
       </a>
-      <a href="https://scholar.google.com/citations?user=Jk-OzNQAAAAJ&amp;hl=en">
+      <a href="https://scholar.google.com/citations?user=Jk-OzNQAAAAJ&amp;hl=en" rel="me">
         <span>Google Scholar</span>
         <strong>Arash Bagherabadi</strong>
         <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
       </a>
-      <a href="https://orcid.org/0000-0003-3036-5687">
+      <a href="https://orcid.org/0000-0003-3036-5687" rel="me">
         <span>ORCID</span>
         <strong>0000-0003-3036-5687</strong>
         <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
       </a>
-      <a href="https://github.com/arashabadi">
+      <a href="https://github.com/arashabadi" rel="me">
         <span>GitHub</span>
         <strong>arashabadi</strong>
         <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
       </a>
-      <a href="https://x.com/arash_b_abadi">
+      <a href="https://x.com/arash_b_abadi" rel="me">
         <span>X</span>
         <strong>@arash_b_abadi</strong>
         <i class="bi bi-arrow-up-right" aria-hidden="true"></i>

@@ -1,11 +1,32 @@
 ---
 title: "Arash Bagherabadi"
+description: "Arash Bagherabadi (Arash B. Abadi) explores spatial biology, immunology, computation, scientific machine learning, robotics, and educational making."
+image: images/hero-spatial-layers.webp
 page-layout: full
 title-block-style: none
 body-classes: home-page
 ---
 
 ```{=html}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": "https://arashabadi.github.io/#profile-page",
+  "url": "https://arashabadi.github.io/",
+  "name": "Arash Bagherabadi (Arash B. Abadi)",
+  "description": "Spatial biology, computational immunology, scientific machine learning, laboratory robotics, and educational making.",
+  "inLanguage": "en",
+  "dateModified": "2026-08-10",
+  "isPartOf": { "@id": "https://arashabadi.github.io/#website" },
+  "mainEntity": { "@id": "https://arashabadi.github.io/#person" },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://arashabadi.github.io/images/hero-spatial-layers.webp"
+  }
+}
+</script>
+
 <div class="home-shell">
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-visual" aria-hidden="true">
@@ -16,10 +37,16 @@ body-classes: home-page
       <h1 id="hero-title">Arash<br>Bagherabadi <span class="alternate-name">(Arash B. Abadi)</span></h1>
       <p class="hero-umbrella">Small Worlds, Large Systems</p>
       <p class="hero-fields">Spatial Biology <span aria-hidden="true">·</span> Immunology <span aria-hidden="true">·</span> Computation</p>
-      <a class="primary-action no-external" href="connect.html" target="_self">
-        <span>Connect</span>
-        <i class="bi bi-arrow-right" aria-hidden="true"></i>
-      </a>
+      <div class="hero-actions">
+        <a class="primary-action no-external" href="connect.html" target="_self">
+          <span>Connect</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a class="primary-action hero-github-action" href="https://github.com/arashabadi" rel="me noopener">
+          <i class="bi bi-github" aria-hidden="true"></i>
+          <span>GitHub</span>
+        </a>
+      </div>
     </div>
 
     <a class="scroll-cue no-external" href="#about" target="_self" aria-label="Continue to About">
@@ -137,10 +164,10 @@ body-classes: home-page
         </article>
         <article class="publication-row">
           <div>
-            <p class="publication-meta">Genes <span aria-hidden="true">·</span> 2023</p>
-            <h3>CCND1 Overexpression in Idiopathic Dilated Cardiomyopathy: A Promising Biomarker?</h3>
+            <p class="publication-meta">Genes <span aria-hidden="true">·</span> 2022</p>
+            <h3>Correlation of NTRK1 Downregulation with Low Levels of Tumor-Infiltrating Immune Cells and Poor Prognosis of Prostate Cancer Revealed by Gene Network Analysis</h3>
           </div>
-          <a href="https://www.mdpi.com/2073-4425/14/6/1243" aria-label="Open publication in Genes"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+          <a href="https://www.mdpi.com/2073-4425/13/5/840" aria-label="Open NTRK1 publication in Genes"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
         </article>
       </div>
     </div>
