@@ -1,6 +1,5 @@
 ---
 title: "Publications"
-description: "Peer-reviewed publications by Arash Bagherabadi (Arash B. Abadi) in computational biology, machine learning, epigenetics, cardiomyopathy, and prostate cancer."
 image: images/publication-dna-methylation-ml.webp
 ---
 
@@ -71,15 +70,10 @@ image: images/publication-dna-methylation-ml.webp
 }
 </script>
 
-<div class="content publication-page-intro">
-  <p>Peer-reviewed work across computational biology, epigenetics, cardiovascular disease, and prostate cancer. Each visual below comes from the corresponding open-access article.</p>
-</div>
-
 <div class="publication-archive">
   <article class="publication-feature">
     <figure class="publication-figure">
       <img src="images/publication-dna-methylation-ml.webp" alt="Circular machine-learning workflow from problem definition and data collection through clinical application" loading="eager">
-      <figcaption>Machine-learning workflow, Figure 3 from the article.</figcaption>
     </figure>
     <div class="publication-feature-copy">
       <p class="publication-meta">Clinical Epigenetics <span aria-hidden="true">·</span> 2025</p>
@@ -93,7 +87,6 @@ image: images/publication-dna-methylation-ml.webp
   <article class="publication-feature">
     <figure class="publication-figure">
       <img src="images/publication-ccnd1-idcm.webp" alt="Protein-protein interaction network showing CCND1 and other hub genes in idiopathic dilated cardiomyopathy" loading="lazy">
-      <figcaption>PPI network of hub genes, Figure 3 from the article.</figcaption>
     </figure>
     <div class="publication-feature-copy">
       <p class="publication-meta">Genes <span aria-hidden="true">·</span> 2023</p>
@@ -107,7 +100,6 @@ image: images/publication-dna-methylation-ml.webp
   <article class="publication-feature">
     <figure class="publication-figure publication-figure-wide">
       <img src="images/publication-ntrk1-prostate.webp" alt="Graphical abstract showing the NTRK1 prostate cancer gene-network analysis workflow" loading="lazy">
-      <figcaption>Graphical abstract supplied by the author.</figcaption>
     </figure>
     <div class="publication-feature-copy">
       <p class="publication-meta">Genes <span aria-hidden="true">·</span> 2022</p>
@@ -121,7 +113,6 @@ image: images/publication-dna-methylation-ml.webp
   <article class="publication-feature">
     <figure class="publication-figure">
       <img src="images/publication-kinase-epigenetic.webp" alt="Diagram of DNA and histone modifications and microRNAs as epigenetic modulators" loading="lazy">
-      <figcaption>Epigenetic regulation, Figure 3 from the article.</figcaption>
     </figure>
     <div class="publication-feature-copy">
       <p class="publication-meta">Pharmaceutics <span aria-hidden="true">·</span> 2022</p>

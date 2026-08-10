@@ -8,6 +8,10 @@ project:
     - robots.txt
     - llms.txt
     - assets/arash-bagherabadi.vcf
+    - assets/hero-cells.js
+    - assets/vendor/three.core.min.js
+    - assets/vendor/three.module.min.js
+    - assets/vendor/three.LICENSE.txt
     - images/contact-qr.svg
     - images/hero-spatial-layers.webp
     - images/hero-spatial-girih.webp

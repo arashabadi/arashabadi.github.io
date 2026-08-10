@@ -31,6 +31,7 @@ body-classes: home-page
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-visual" aria-hidden="true">
       <img src="images/hero-spatial-girih.webp" alt="" fetchpriority="high">
+      <div class="hero-cell-stage" data-hero-cells></div>
     </div>
 
     <div class="hero-copy">
@@ -97,8 +98,8 @@ body-classes: home-page
         </article>
         <article class="practice-item">
           <span>03</span>
-          <h3>Build and teach</h3>
-          <p>Laboratory robotics, 3D printing, miniature making, and educational resources that make technical ideas more tangible and accessible.</p>
+          <h3>Build, design, and teach</h3>
+          <p>Laboratory robotics, 3D printing, miniature making, visual design, and educational resources that make technical ideas more tangible, intuitive, and accessible.</p>
         </article>
       </div>
     </div>

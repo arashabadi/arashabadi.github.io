@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Peer-reviewed publications by Arash Bagherabadi (Arash B. Abadi) in computational biology, machine learning, epigenetics, cardiomyopathy, and prostate cancer.">
 
 <title>Publications – Arash Bagherabadi</title>
 <style>
@@ -70,11 +69,9 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Publications – Arash Bagherabadi">
-<meta property="og:description" content="Peer-reviewed publications by Arash Bagherabadi (Arash B. Abadi) in computational biology, machine learning, epigenetics, cardiomyopathy, and prostate cancer.">
 <meta property="og:image" content="https://arashabadi.github.io/images/publication-dna-methylation-ml.webp">
 <meta property="og:site_name" content="Arash Bagherabadi">
 <meta name="twitter:title" content="Publications – Arash Bagherabadi">
-<meta name="twitter:description" content="Peer-reviewed publications by Arash Bagherabadi (Arash B. Abadi) in computational biology, machine learning, epigenetics, cardiomyopathy, and prostate cancer.">
 <meta name="twitter:image" content="https://arashabadi.github.io/images/publication-dna-methylation-ml.webp">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -187,11 +184,6 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">Publications</h1>
 </div>
 
-<div>
-  <div class="description">
-    Peer-reviewed publications by Arash Bagherabadi (Arash B. Abadi) in computational biology, machine learning, epigenetics, cardiomyopathy, and prostate cancer.
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -272,15 +264,10 @@ ul.task-list li input[type="checkbox"] {
 }
 </script>
 
-<div class="content publication-page-intro">
-  <p>Peer-reviewed work across computational biology, epigenetics, cardiovascular disease, and prostate cancer. Each visual below comes from the corresponding open-access article.</p>
-</div>
-
 <div class="publication-archive">
   <article class="publication-feature">
     <figure class="publication-figure figure">
       <img src="images/publication-dna-methylation-ml.webp" alt="Circular machine-learning workflow from problem definition and data collection through clinical application" loading="eager" class="figure-img">
-      <figcaption>Machine-learning workflow, Figure 3 from the article.</figcaption>
     </figure>
     <div class="publication-feature-copy">
       <p class="publication-meta">Clinical Epigenetics <span aria-hidden="true">·</span> 2025</p>
@@ -294,7 +281,6 @@ ul.task-list li input[type="checkbox"] {
   <article class="publication-feature">
     <figure class="publication-figure figure">
       <img src="images/publication-ccnd1-idcm.webp" alt="Protein-protein interaction network showing CCND1 and other hub genes in idiopathic dilated cardiomyopathy" loading="lazy" class="figure-img">
-      <figcaption>PPI network of hub genes, Figure 3 from the article.</figcaption>
     </figure>
     <div class="publication-feature-copy">
       <p class="publication-meta">Genes <span aria-hidden="true">·</span> 2023</p>
@@ -308,7 +294,6 @@ ul.task-list li input[type="checkbox"] {
   <article class="publication-feature">
     <figure class="publication-figure publication-figure-wide figure">
       <img src="images/publication-ntrk1-prostate.webp" alt="Graphical abstract showing the NTRK1 prostate cancer gene-network analysis workflow" loading="lazy" class="figure-img">
-      <figcaption>Graphical abstract supplied by the author.</figcaption>
     </figure>
     <div class="publication-feature-copy">
       <p class="publication-meta">Genes <span aria-hidden="true">·</span> 2022</p>
@@ -322,7 +307,6 @@ ul.task-list li input[type="checkbox"] {
   <article class="publication-feature">
     <figure class="publication-figure figure">
       <img src="images/publication-kinase-epigenetic.webp" alt="Diagram of DNA and histone modifications and microRNAs as epigenetic modulators" loading="lazy" class="figure-img">
-      <figcaption>Epigenetic regulation, Figure 3 from the article.</figcaption>
     </figure>
     <div class="publication-feature-copy">
       <p class="publication-meta">Pharmaceutics <span aria-hidden="true">·</span> 2022</p>
@@ -443,7 +427,29 @@ ul.task-list li input[type="checkbox"] {
       }, 550);
     }
   }
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealTargets = document.querySelectorAll('.home-page section:not(.hero) .section-inner');
+  if (!reducedMotion && revealTargets.length && 'IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+    revealTargets.forEach(function (target) {
+      target.classList.add('section-reveal');
+      revealObserver.observe(target);
+    });
+  }
 })();
+</script>
+<script type="module">
+  if (document.querySelector('[data-hero-cells]')) {
+    import('./assets/hero-cells.js');
+  }
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
