@@ -154,12 +154,12 @@ body-classes: home-page
           <a class="project-link" href="https://arashabadi.github.io/patoq/">Open book <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
         </article>
         <article class="project-row">
-          <p class="project-kind">Hackathon</p>
+          <p class="project-kind">Interactive app</p>
           <div class="project-copy">
-            <h3>CM4AI CodeFest 2025</h3>
-            <p>An alternative image-embedding workflow for immunofluorescence data using cell segmentation, preprocessing, and SubCell-based inference.</p>
+            <h3>CellRank 2 Learning Lab</h3>
+            <p>An interactive app for learning how neighborhood graphs become directional transitions, macrostates, and fate probabilities.</p>
           </div>
-          <a class="project-link" href="https://github.com/arashabadi/cm4ai_codefest2025">Repository <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+          <a class="project-link" href="https://arashabadi.github.io/cellrank2-learning-lab/">Launch app <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
         </article>
       </div>
     </div>
