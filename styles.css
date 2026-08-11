@@ -458,19 +458,19 @@ body.connect-page #quarto-content > main#quarto-document-content {
   margin: 0;
 }
 
-.about-umbrella {
-  color: var(--cyan);
-  display: block;
-  font-size: 0.52em;
-  line-height: 1.2;
-  margin-bottom: 1.15rem;
+.about-intro {
+  color: #c4c2bc;
+  font-size: 1.08rem;
+  line-height: 1.65;
+  margin: 1.6rem 0 0;
+  max-width: 43rem;
 }
 
 .about-fields {
   color: #aaa9a4;
   font-size: 0.9rem;
   line-height: 1.5;
-  margin: 1.75rem 0 0;
+  margin: 1.5rem 0 0;
 }
 
 .about-fields span {
@@ -516,32 +516,32 @@ body.connect-page #quarto-content > main#quarto-document-content {
   padding: 7.5rem 4rem;
 }
 
-.practice-summary {
-  color: #aaa9a4;
-  font-size: 1.02rem;
-  margin: 1.25rem 0 0;
-  max-width: 48rem;
+.practice-heading {
+  max-width: 56rem;
 }
 
 .practice-grid {
   border-top: 1px solid var(--line-dark);
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 3.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 4rem;
 }
 
 .practice-item {
+  border-bottom: 1px solid var(--line-dark);
   border-right: 1px solid var(--line-dark);
   min-width: 0;
-  padding: 2.1rem 2.5rem 0 0;
+  padding: 2.5rem 3rem 2.8rem 0;
 }
 
-.practice-item + .practice-item {
-  padding-left: 2.5rem;
-}
-
-.practice-item:last-child {
+.practice-item:nth-child(even) {
   border-right: 0;
+  padding-left: 3rem;
+  padding-right: 0;
+}
+
+.practice-item:nth-last-child(-n + 2) {
+  border-bottom: 0;
 }
 
 .practice-item > span {
@@ -552,24 +552,18 @@ body.connect-page #quarto-content > main#quarto-document-content {
 
 .practice-item h3 {
   font-family: var(--serif);
-  font-size: 1.65rem;
+  font-size: 1.75rem;
   font-weight: 400;
   line-height: 1.15;
-  margin: 1.5rem 0 0;
+  margin: 1.35rem 0 0;
 }
 
 .practice-item p {
   color: #aaa9a4;
-  font-size: 0.94rem;
-  margin: 0.85rem 0 0;
-}
-
-.practice-personal {
-  border-top: 1px solid var(--line-dark);
-  color: #aaa9a4;
-  font-size: 0.92rem;
-  margin: 2.5rem 0 0;
-  padding-top: 1.35rem;
+  font-size: 0.96rem;
+  line-height: 1.7;
+  margin: 0.9rem 0 0;
+  max-width: 31rem;
 }
 
 .projects-band {
@@ -1681,6 +1675,10 @@ body:not(.home-page):not(.connect-page) main.content > .content {
     border-bottom: 1px solid var(--line-dark);
     border-right: 0;
     padding: 1.8rem 0;
+  }
+
+  .practice-item:nth-last-child(-n + 2) {
+    border-bottom: 1px solid var(--line-dark);
   }
 
   .practice-item:last-child {
