@@ -38,12 +38,16 @@ body-classes: home-page
       <h1 id="hero-title">Arash<br>Bagherabadi <span class="alternate-name">(Arash B. Abadi)</span></h1>
       <div class="hero-actions">
         <a class="primary-action no-external" href="connect.html" target="_self">
-          <span>Connect</span>
+          <span>Digital card</span>
           <i class="bi bi-arrow-right" aria-hidden="true"></i>
         </a>
         <a class="primary-action hero-github-action" href="https://github.com/arashabadi" rel="me noopener">
           <span>GitHub</span>
           <i class="bi bi-github" aria-hidden="true"></i>
+        </a>
+        <a class="primary-action" href="https://www.linkedin.com/in/arashbagherabadi" rel="me noopener">
+          <span>LinkedIn</span>
+          <i class="bi bi-linkedin" aria-hidden="true"></i>
         </a>
       </div>
     </div>
@@ -164,7 +168,7 @@ body-classes: home-page
   <section class="connect-band connect-compact" id="connect" aria-labelledby="connect-title">
     <div class="section-inner connect-layout">
       <div class="connect-copy">
-        <p class="eyebrow">Connect</p>
+        <p class="eyebrow">Digital card</p>
         <h2 id="connect-title">Contact, profiles, and a digital card.</h2>
         <a class="dark-action no-external" href="connect.html" target="_self">
           <span>Open contact card</span>

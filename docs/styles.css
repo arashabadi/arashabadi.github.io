@@ -309,6 +309,7 @@ body.connect-page #quarto-content > main#quarto-document-content {
   max-width: 32rem;
   position: relative;
   transform: translateY(-1.25rem);
+  width: 100%;
   z-index: 2;
 }
 
@@ -359,11 +360,11 @@ body.connect-page #quarto-content > main#quarto-document-content {
 }
 
 .hero-actions {
-  align-items: stretch;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 1.75rem;
+  width: 100%;
 }
 
 .hero-actions .primary-action {
@@ -371,13 +372,13 @@ body.connect-page #quarto-content > main#quarto-document-content {
   justify-content: space-between;
   margin-top: 0;
   min-height: 3.4rem;
-  min-width: 11.5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  min-width: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .hero-github-action {
-  min-width: 11rem !important;
+  min-width: 0 !important;
 }
 
 .primary-action:hover,
@@ -1621,7 +1622,12 @@ body:not(.home-page):not(.connect-page) main.content > .content {
   }
 
   .hero-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     margin-top: 1.3rem;
+  }
+
+  .hero-actions .primary-action:first-child {
+    grid-column: 1 / -1;
   }
 
   .scroll-cue {
@@ -1857,21 +1863,6 @@ body:not(.home-page):not(.connect-page) main.content > .content {
 
   .hero-copy p {
     max-width: 21rem;
-  }
-
-  .hero-actions {
-    flex-wrap: nowrap;
-  }
-
-  .hero-actions .primary-action {
-    flex: 1 1 0;
-    min-width: 0;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .hero-actions .hero-github-action {
-    min-width: 0 !important;
   }
 
   .contact-directory,
