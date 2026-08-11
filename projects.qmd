@@ -27,8 +27,8 @@ A comprehensive Quarto-based online HTML book for the PATOQ project, providing c
 ## Apps {.section-heading}
 
 ::: {.card .project-card}
-::: {.project-card-media}
-![](images/project-cellrank-learning-lab.jpg){fig-alt="CellRank 2 Learning Lab interactive trajectory explorer" loading="lazy" decoding="async"}
+::: {.project-card-media .project-card-media-contain}
+![](images/project-cellrank-learning-lab.webp){fig-alt="CellRank 2 Learning Lab branching trajectory graphic" loading="lazy" decoding="async"}
 :::
 ::: {.project-card-copy}
 ### CellRank 2 Learning Lab
