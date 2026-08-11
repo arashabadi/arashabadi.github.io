@@ -48,24 +48,9 @@
 </script>
 <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM site summary">
 
-<script>
-(function () {
-  try {
-    if (window.localStorage.getItem('arash-site-theme') === 'light') {
-      document.documentElement.dataset.theme = 'light';
-    }
-  } catch (error) {
-    // The dark default remains available when storage is blocked.
-  }
-})();
-</script>
-
 <header class="site-header" data-site-header>
   <a class="site-wordmark no-external" href="index.html" target="_self" aria-label="Arash Bagherabadi home">AB</a>
   <div class="site-header-actions">
-    <button class="theme-toggle" type="button" aria-label="Use light theme" title="Use light theme">
-      <i class="bi bi-sun" aria-hidden="true"></i>
-    </button>
     <button class="site-menu-button" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation" title="Menu">
       <i class="bi bi-list" aria-hidden="true"></i>
     </button>
@@ -78,8 +63,8 @@
     <div class="site-menu-links">
       <a class="no-external" href="index.html#about" target="_self">About</a>
       <a class="no-external" href="index.html#practice" target="_self">What I do</a>
-      <a class="no-external" href="index.html#projects" target="_self">Projects</a>
       <a class="no-external" href="index.html#publications" target="_self">Publications</a>
+      <a class="no-external" href="index.html#projects" target="_self">Projects</a>
       <a class="no-external" href="blog.html" target="_self">Blog</a>
       <a class="no-external" href="connect.html" target="_self">Connect</a>
     </div>

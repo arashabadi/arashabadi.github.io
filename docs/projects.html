@@ -141,24 +141,9 @@ ul.task-list li input[type="checkbox"] {
 </script>
 <link rel="alternate" type="text/plain" href="./llms.txt" title="LLM site summary">
 
-<script>
-(function () {
-  try {
-    if (window.localStorage.getItem('arash-site-theme') === 'light') {
-      document.documentElement.dataset.theme = 'light';
-    }
-  } catch (error) {
-    // The dark default remains available when storage is blocked.
-  }
-})();
-</script>
-
 <header class="site-header" data-site-header="">
   <a class="site-wordmark no-external" href="index.html" target="_self" aria-label="Arash Bagherabadi home">AB</a>
   <div class="site-header-actions">
-    <button class="theme-toggle" type="button" aria-label="Use light theme" title="Use light theme">
-      <i class="bi bi-sun" aria-hidden="true"></i>
-    </button>
     <button class="site-menu-button" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation" title="Menu">
       <i class="bi bi-list" aria-hidden="true"></i>
     </button>
@@ -171,8 +156,8 @@ ul.task-list li input[type="checkbox"] {
     <div class="site-menu-links">
       <a class="no-external" href="index.html#about" target="_self">About</a>
       <a class="no-external" href="index.html#practice" target="_self">What I do</a>
-      <a class="no-external" href="index.html#projects" target="_self">Projects</a>
       <a class="no-external" href="index.html#publications" target="_self">Publications</a>
+      <a class="no-external" href="index.html#projects" target="_self">Projects</a>
       <a class="no-external" href="blog.html" target="_self">Blog</a>
       <a class="no-external" href="connect.html" target="_self">Connect</a>
     </div>
@@ -273,8 +258,8 @@ ul.task-list li input[type="checkbox"] {
 <footer class="site-footer">
   <a class="site-footer-mark no-external" href="index.html" target="_self">AB</a>
   <nav aria-label="Footer navigation">
-    <a class="no-external" href="index.html#projects" target="_self">Projects</a>
     <a class="no-external" href="index.html#publications" target="_self">Publications</a>
+    <a class="no-external" href="index.html#projects" target="_self">Projects</a>
     <a class="no-external" href="blog.html" target="_self">Blog</a>
     <a class="no-external" href="connect.html" target="_self">Connect</a>
   </nav>
@@ -288,31 +273,6 @@ ul.task-list li input[type="checkbox"] {
   const menu = document.getElementById('site-menu');
   const menuButton = document.querySelector('.site-menu-button');
   const menuClosers = document.querySelectorAll('[data-menu-close]');
-  const themeButton = document.querySelector('.theme-toggle');
-
-  function setTheme(theme, persist) {
-    const light = theme === 'light';
-    document.documentElement.dataset.theme = light ? 'light' : 'dark';
-    if (themeButton) {
-      const label = light ? 'Use dark theme' : 'Use light theme';
-      const icon = themeButton.querySelector('i');
-      themeButton.setAttribute('aria-label', label);
-      themeButton.setAttribute('title', label);
-      if (icon) icon.className = light ? 'bi bi-moon-stars' : 'bi bi-sun';
-    }
-    if (persist) {
-      try {
-        window.localStorage.setItem('arash-site-theme', light ? 'light' : 'dark');
-      } catch (error) {
-        // Theme switching still works for the current page.
-      }
-    }
-  }
-
-  setTheme(document.documentElement.dataset.theme === 'light' ? 'light' : 'dark', false);
-  themeButton && themeButton.addEventListener('click', function () {
-    setTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light', true);
-  });
 
   function setMenu(open) {
     if (!menu || !menuButton) return;
@@ -377,22 +337,6 @@ ul.task-list li input[type="checkbox"] {
     }
   }
 
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const revealTargets = document.querySelectorAll('.home-page section:not(.hero) .section-inner');
-  if (!reducedMotion && revealTargets.length && 'IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
-        revealObserver.unobserve(entry.target);
-      });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-
-    revealTargets.forEach(function (target) {
-      target.classList.add('section-reveal');
-      revealObserver.observe(target);
-    });
-  }
 })();
 </script>
 <script type="module">
