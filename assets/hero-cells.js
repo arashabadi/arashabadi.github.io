@@ -1,317 +1,267 @@
-import * as THREE from './vendor/three.module.min.js';
-
 const stage = document.querySelector('[data-hero-cells]');
 
-function startCanvasFallback(container, reducedMotion) {
-  if (reducedMotion.matches) {
-    container.hidden = true;
-    return;
-  }
-
+if (stage) {
+  const section = stage.closest('[data-spatial-intro]');
+  const visual = stage.closest('.hero-visual');
+  const progressBar = section.querySelector('[data-hero-progress]');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const coarsePointer = window.matchMedia('(pointer: coarse)');
   const canvas = document.createElement('canvas');
-  const context = canvas.getContext('2d');
-  if (!context) {
-    container.hidden = true;
-    return;
-  }
+  const context = canvas.getContext('2d', { alpha: true });
 
-  container.dataset.renderer = 'canvas2d';
-  canvas.setAttribute('aria-hidden', 'true');
-  container.appendChild(canvas);
+  const CONFIG = {
+    coordinateStart: 0.05,
+    coordinateEnd: 0.76,
+    trajectoryCurve: 0.07,
+    desktopPointRadius: 1.65,
+    highlightedPointRadius: 2.25,
+    mobilePointStride: 2,
+    easing: 0.16,
+    pointerRadius: 115,
+    pointerDisplacement: 9,
+    maxDpr: 1.75
+  };
 
-  const colors = ['#58d8e7', '#33aebf', '#84d7d0', '#e77d4d', '#e8c277'];
-  const layerPositions = [0.18, 0.29, 0.4, 0.51, 0.62];
-  const particles = Array.from({ length: window.innerWidth <= 820 ? 90 : 150 }, function (_, index) {
-    const random = function (salt) {
-      const value = Math.sin(index * 91.173 + salt * 37.719) * 43758.5453;
-      return value - Math.floor(value);
-    };
-    const layer = index % layerPositions.length;
-    const direction = layer === 0 ? 1 : layer === layerPositions.length - 1 ? -1 : random(1) > 0.5 ? 1 : -1;
-    const migrates = random(2) > 0.76;
-    return {
-      layer,
-      targetLayer: migrates ? layer + direction : layer,
-      x: (random(3) - 0.5) * 0.74,
-      y: (random(4) - 0.5) * 0.018,
-      phase: random(5) * Math.PI * 2,
-      speed: 0.3 + random(6) * 0.2,
-      drift: (random(7) - 0.5) * 0.09,
-      radius: 0.8 + random(8) * 1.4,
-      color: colors[Math.floor(random(9) * colors.length)],
-      migrates
-    };
-  });
+  const pointer = {
+    x: 0,
+    y: 0,
+    lastX: 0,
+    lastY: 0,
+    lastTime: 0,
+    active: false,
+    energy: 0
+  };
 
+  let cellGroups = [];
   let width = 1;
   let height = 1;
-  let frame = 0;
+  let dpr = 1;
+  let plot = { x: 0, y: 0, width: 1, height: 1 };
+  let targetProgress = 0;
+  let renderedProgress = 0;
   let animationFrame = 0;
-  let visible = true;
-  const started = performance.now();
+  let ready = false;
+
+  canvas.setAttribute('aria-hidden', 'true');
+  stage.appendChild(canvas);
+  stage.dataset.status = 'loading';
+
+  function clamp(value, minimum = 0, maximum = 1) {
+    return Math.max(minimum, Math.min(maximum, value));
+  }
 
   function smoothstep(value) {
-    const clamped = Math.max(0, Math.min(1, value));
+    const clamped = clamp(value);
     return clamped * clamped * (3 - 2 * clamped);
   }
 
-  function convergenceAt(cycle) {
-    if (cycle < 0.56) return 0;
-    if (cycle < 0.7) return smoothstep((cycle - 0.56) / 0.14);
-    if (cycle < 0.82) return 1;
-    return 1 - smoothstep((cycle - 0.82) / 0.18);
+  function smootherstep(value) {
+    const clamped = clamp(value);
+    return clamped ** 3 * (clamped * (clamped * 6 - 15) + 10);
+  }
+
+  function hashIdentity(identity) {
+    let hash = 2166136261;
+    for (let index = 0; index < identity.length; index += 1) {
+      hash ^= identity.charCodeAt(index);
+      hash = Math.imul(hash, 16777619);
+    }
+    return (hash >>> 0) / 4294967295;
+  }
+
+  function pointAt(x, y) {
+    return {
+      x: plot.x + x * plot.width,
+      y: plot.y + y * plot.height
+    };
   }
 
   function resize() {
-    width = Math.max(1, container.clientWidth);
-    height = Math.max(1, container.clientHeight);
-    const ratio = Math.min(window.devicePixelRatio || 1, 1.75);
-    canvas.width = Math.round(width * ratio);
-    canvas.height = Math.round(height * ratio);
-    context.setTransform(ratio, 0, 0, ratio, 0, 0);
+    width = Math.max(1, stage.clientWidth);
+    height = Math.max(1, stage.clientHeight);
+    const compact = width <= 620;
+    dpr = Math.min(window.devicePixelRatio || 1, compact ? 1.5 : CONFIG.maxDpr);
+    canvas.width = Math.round(width * dpr);
+    canvas.height = Math.round(height * dpr);
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    context.setTransform(dpr, 0, 0, dpr, 0, 0);
+    plot = compact
+      ? { x: width * 0.01, y: height * 0.03, width: width * 0.98, height: height * 0.82 }
+      : { x: width * 0.025, y: height * 0.03, width: width * 0.95, height: height * 0.88 };
+    scheduleRender(true);
   }
 
-  function draw(now) {
-    const elapsed = (now - started) / 1000;
-    const cycle = (elapsed % 16) / 16;
-    const convergence = convergenceAt(cycle);
-    const centerX = width <= 820 ? width * 0.36 : width * 0.49;
+  function trajectory(cell, progress) {
+    const stagger = hashIdentity(cell.id) * 0.055;
+    const localProgress = smootherstep(
+      (progress - CONFIG.coordinateStart - stagger)
+      / (CONFIG.coordinateEnd - CONFIG.coordinateStart - stagger)
+    );
+    const source = pointAt(cell.umapX, cell.umapY);
+    const destination = pointAt(cell.spatialX, cell.spatialY);
+    const dx = destination.x - source.x;
+    const dy = destination.y - source.y;
+    const distance = Math.max(1, Math.hypot(dx, dy));
+    const direction = (hashIdentity(`${cell.id}:curve`) - 0.5) * 2;
+    const curve = Math.min(distance * 0.18, Math.min(plot.width, plot.height) * CONFIG.trajectoryCurve) * direction;
+    const control = {
+      x: (source.x + destination.x) * 0.5 - (dy / distance) * curve,
+      y: (source.y + destination.y) * 0.5 + (dx / distance) * curve
+    };
+    const inverse = 1 - localProgress;
+    return {
+      x: inverse ** 2 * source.x + 2 * inverse * localProgress * control.x + localProgress ** 2 * destination.x,
+      y: inverse ** 2 * source.y + 2 * inverse * localProgress * control.y + localProgress ** 2 * destination.y,
+      progress: localProgress
+    };
+  }
+
+  function applyPointerMotion(point, cell, now) {
+    if (!pointer.active || pointer.energy < 0.002 || reducedMotion.matches) return point;
+    const dx = point.x - pointer.x;
+    const dy = point.y - pointer.y;
+    const distance = Math.max(1, Math.hypot(dx, dy));
+    const influence = smoothstep(1 - distance / CONFIG.pointerRadius);
+    if (influence <= 0) return point;
+    const identityPhase = hashIdentity(`${cell.id}:pointer`) * Math.PI * 2;
+    const vibration = Math.sin(now * 0.026 + identityPhase) * 2.4 * pointer.energy * influence;
+    const displacement = CONFIG.pointerDisplacement * pointer.energy * influence;
+    return {
+      ...point,
+      x: point.x + (dx / distance) * displacement + Math.cos(identityPhase) * vibration,
+      y: point.y + (dy / distance) * displacement + Math.sin(identityPhase) * vibration
+    };
+  }
+
+  function draw(progress, now) {
+    if (!ready) return;
+    context.setTransform(dpr, 0, 0, dpr, 0, 0);
     context.clearRect(0, 0, width, height);
-    context.globalCompositeOperation = 'lighter';
 
-    particles.forEach(function (particle) {
-      const wave = particle.migrates
-        ? (1 - Math.cos(elapsed * particle.speed * Math.PI * 2 + particle.phase)) * 0.5
-        : 0;
-      const layerY = layerPositions[particle.layer];
-      const targetY = layerPositions[particle.targetLayer];
-      const movingY = layerY + (targetY - layerY) * wave + particle.y;
-      const assembledY = 0.78 + Math.cos(particle.x * Math.PI) * 0.012;
-      const arc = particle.migrates ? Math.sin(wave * Math.PI) : 0;
-      const x = centerX + (particle.x + particle.drift * arc * (1 - convergence)) * width * 0.62;
-      const y = (movingY + (assembledY - movingY) * convergence) * height;
-      const radius = particle.radius * (1 + convergence * 0.2);
-
+    const compact = width <= 620;
+    const stride = compact ? CONFIG.mobilePointStride : 1;
+    cellGroups.forEach((group) => {
+      const highlighted = group.key === 'b_cell' || group.key === 'treg';
+      const supporting = group.key === 'stromal' || group.key === 'epithelial';
+      const radius = compact
+        ? (highlighted ? 1.82 : supporting ? 1.05 : 1.28)
+        : (highlighted ? CONFIG.highlightedPointRadius : supporting ? 1.35 : CONFIG.desktopPointRadius);
       context.beginPath();
-      context.fillStyle = particle.color;
-      context.globalAlpha = 0.55 + convergence * 0.25;
-      context.arc(x, y, radius, 0, Math.PI * 2);
+      group.cells.forEach((cell, index) => {
+        if (index % stride !== 0) return;
+        const basePoint = trajectory(cell, progress);
+        const point = applyPointerMotion(basePoint, cell, now);
+        const settledRadius = radius * (0.92 + point.progress * 0.08);
+        context.moveTo(point.x + settledRadius, point.y);
+        context.arc(point.x, point.y, settledRadius, 0, Math.PI * 2);
+      });
+      context.fillStyle = group.color;
+      context.globalAlpha = highlighted ? 0.96 : supporting ? 0.68 : 0.8;
       context.fill();
     });
-
     context.globalAlpha = 1;
-    context.globalCompositeOperation = 'source-over';
-    frame += 1;
-    if (frame % 20 === 0) {
-      container.dataset.frame = String(frame);
-      container.dataset.state = convergence > 0.88 ? 'assembled' : convergence > 0.08 ? 'converging' : 'sectioned';
+    progressBar.style.transform = `scaleX(${progress.toFixed(4)})`;
+    stage.dataset.state = progress < 0.36 ? 'umap' : progress < 0.72 ? 'mapping' : 'spatial';
+  }
+
+  function measureProgress() {
+    if (reducedMotion.matches) {
+      targetProgress = 1;
+    } else {
+      const rect = section.getBoundingClientRect();
+      const scrollDistance = Math.max(1, section.offsetHeight - window.innerHeight);
+      targetProgress = clamp(-rect.top / scrollDistance);
     }
-    if (visible && !document.hidden && !reducedMotion.matches) animationFrame = window.requestAnimationFrame(draw);
+    scheduleRender();
   }
 
-  function start() {
-    window.cancelAnimationFrame(animationFrame);
-    if (!visible || document.hidden || reducedMotion.matches) return;
-    animationFrame = window.requestAnimationFrame(draw);
+  function animate(now) {
+    animationFrame = 0;
+    if (!ready) return;
+    if (reducedMotion.matches) {
+      renderedProgress = 1;
+      pointer.energy = 0;
+    } else {
+      const difference = targetProgress - renderedProgress;
+      renderedProgress = Math.abs(difference) < 0.0005
+        ? targetProgress
+        : renderedProgress + difference * CONFIG.easing;
+      pointer.energy *= 0.9;
+    }
+    draw(renderedProgress, now);
+    if (Math.abs(targetProgress - renderedProgress) >= 0.0005 || pointer.energy >= 0.004) scheduleRender();
   }
 
-  const observer = new IntersectionObserver(function (entries) {
-    visible = entries[0] && entries[0].isIntersecting;
-    start();
-  }, { threshold: 0.01 });
-  observer.observe(container);
-  window.addEventListener('resize', resize, { passive: true });
-  document.addEventListener('visibilitychange', start);
-  resize();
-  start();
-}
+  function scheduleRender(immediate = false) {
+    if (!ready) return;
+    if (immediate) renderedProgress = reducedMotion.matches ? 1 : targetProgress;
+    if (!animationFrame) animationFrame = window.requestAnimationFrame(animate);
+  }
 
-if (stage) {
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const coarsePointer = window.matchMedia('(pointer: coarse)');
-  let renderer;
-
-  try {
-    renderer = new THREE.WebGLRenderer({
-      alpha: true,
-      antialias: true,
-      powerPreference: 'high-performance',
-      preserveDrawingBuffer: true
+  function groupCells(data) {
+    const ordering = ['stromal', 'epithelial', 'macrophage', 'dendritic', 'cd8_t', 'cd4_t', 'treg', 'b_cell'];
+    return ordering.map((key) => {
+      const type = data.metadata.cellTypes.find((candidate) => candidate.key === key);
+      return {
+        key,
+        color: type.color,
+        cells: data.cells.filter((cell) => cell.cellType === key)
+      };
     });
-  } catch (error) {
-    startCanvasFallback(stage, reducedMotion);
   }
 
-  if (renderer) {
-    stage.dataset.renderer = 'webgl';
-    renderer.setClearColor(0x000000, 0);
-    renderer.outputColorSpace = THREE.SRGBColorSpace;
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
-    renderer.domElement.setAttribute('aria-hidden', 'true');
-    stage.appendChild(renderer.domElement);
-
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
-    camera.position.set(0, 0, 10);
-
-    const cellGroup = new THREE.Group();
-    scene.add(cellGroup);
-
-    const mobile = window.innerWidth <= 820;
-    const cellCount = mobile || coarsePointer.matches ? 120 : 230;
-    const geometry = new THREE.SphereGeometry(0.052, 7, 5);
-    const material = new THREE.MeshBasicMaterial({
-      transparent: true,
-      opacity: 0.94,
-      vertexColors: true,
-      depthWrite: false
-    });
-    const cells = new THREE.InstancedMesh(geometry, material, cellCount);
-    cells.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
-    cells.frustumCulled = false;
-    cellGroup.add(cells);
-
-    const layerY = [2.25, 1.35, 0.45, -0.45, -1.35];
-    const palette = [0x58d8e7, 0x33aebf, 0x84d7d0, 0xe77d4d, 0xe8c277];
-    const particles = [];
-    const color = new THREE.Color();
-    const dummy = new THREE.Object3D();
-
-    function seeded(index, salt) {
-      const value = Math.sin(index * 91.173 + salt * 37.719) * 43758.5453;
-      return value - Math.floor(value);
-    }
-
-    for (let index = 0; index < cellCount; index += 1) {
-      const layer = index % layerY.length;
-      const angle = seeded(index, 1) * Math.PI * 2;
-      const radial = Math.sqrt(seeded(index, 2));
-      const width = 2.2 + seeded(layer, 5) * 0.35;
-      const x = Math.cos(angle) * radial * width;
-      const z = Math.sin(angle) * radial * 0.72;
-      const direction = layer === 0 ? 1 : layer === layerY.length - 1 ? -1 : seeded(index, 3) > 0.5 ? 1 : -1;
-      const migrates = seeded(index, 4) > 0.76;
-      particles.push({
-        layer,
-        targetLayer: migrates ? layer + direction : layer,
-        x,
-        z,
-        yJitter: (seeded(index, 6) - 0.5) * 0.16,
-        phase: seeded(index, 7) * Math.PI * 2,
-        speed: 0.34 + seeded(index, 8) * 0.22,
-        drift: (seeded(index, 9) - 0.5) * 0.7,
-        scale: (0.72 + seeded(index, 10) * 1.1) * (migrates ? 1.35 : 1),
-        migrates
-      });
-
-      color.setHex(palette[Math.floor(seeded(index, 11) * palette.length)]);
-      cells.setColorAt(index, color);
-    }
-    cells.instanceColor.needsUpdate = true;
-
-    let frame = 0;
-    let animationFrame = 0;
-    let visible = true;
-    let pointerX = 0;
-    let pointerY = 0;
-    const startTime = performance.now();
-
-    function smoothstep(value) {
-      const clamped = Math.max(0, Math.min(1, value));
-      return clamped * clamped * (3 - 2 * clamped);
-    }
-
-    function convergenceAt(cycle) {
-      if (cycle < 0.56) return 0;
-      if (cycle < 0.7) return smoothstep((cycle - 0.56) / 0.14);
-      if (cycle < 0.82) return 1;
-      return 1 - smoothstep((cycle - 0.82) / 0.18);
-    }
-
-    function resize() {
-      const width = Math.max(1, stage.clientWidth);
-      const height = Math.max(1, stage.clientHeight);
-      renderer.setSize(width, height, false);
-      camera.aspect = width / height;
-      camera.updateProjectionMatrix();
-      cellGroup.position.x = width <= 820 ? -0.82 : -0.38;
-      cellGroup.scale.setScalar(width <= 480 ? 0.9 : 1);
-    }
-
-    function render(now) {
-      const elapsed = (now - startTime) / 1000;
-      const cycle = (elapsed % 16) / 16;
-      const convergence = convergenceAt(cycle);
-
-      particles.forEach(function (particle, index) {
-        const migrationWave = particle.migrates
-          ? (1 - Math.cos(elapsed * particle.speed * Math.PI * 2 + particle.phase)) * 0.5
-          : 0;
-        const sourceY = layerY[particle.layer];
-        const targetY = layerY[particle.targetLayer];
-        const migratingY = THREE.MathUtils.lerp(sourceY, targetY, migrationWave) + particle.yJitter;
-        const assembledY = -1.98 + Math.cos((particle.x / 2.6) * Math.PI) * 0.11 + particle.z * 0.035;
-        const arc = particle.migrates ? Math.sin(migrationWave * Math.PI) : 0;
-        const breath = Math.sin(elapsed * 1.15 + particle.phase) * 0.018;
-
-        dummy.position.set(
-          particle.x + particle.drift * arc * (1 - convergence),
-          THREE.MathUtils.lerp(migratingY + breath, assembledY, convergence),
-          particle.z + arc * 0.16
-        );
-        const pulse = particle.scale * (1 + Math.sin(elapsed * 1.8 + particle.phase) * 0.1 + convergence * 0.12);
-        dummy.scale.setScalar(pulse);
-        dummy.updateMatrix();
-        cells.setMatrixAt(index, dummy.matrix);
-      });
-
-      cells.instanceMatrix.needsUpdate = true;
-      cellGroup.rotation.y += (pointerX * 0.035 - cellGroup.rotation.y) * 0.025;
-      cellGroup.rotation.x += (-pointerY * 0.02 - cellGroup.rotation.x) * 0.025;
-      material.opacity = 0.88 + convergence * 0.1;
-      renderer.render(scene, camera);
-
-      frame += 1;
-      if (frame % 20 === 0) {
-        stage.dataset.frame = String(frame);
-        stage.dataset.state = convergence > 0.88 ? 'assembled' : convergence > 0.08 ? 'converging' : 'sectioned';
-      }
-      if (visible && !document.hidden && !reducedMotion.matches) animationFrame = window.requestAnimationFrame(render);
-    }
-
-    function start() {
-      window.cancelAnimationFrame(animationFrame);
-      if (reducedMotion.matches || !visible || document.hidden) {
-        stage.hidden = reducedMotion.matches;
-        return;
-      }
-      stage.hidden = false;
-      animationFrame = window.requestAnimationFrame(render);
-    }
-
-    const observer = new IntersectionObserver(function (entries) {
-      visible = entries[0] && entries[0].isIntersecting;
-      start();
-    }, { threshold: 0.01 });
-    observer.observe(stage);
-
-    const hero = stage.closest('.hero');
-    if (hero && !coarsePointer.matches) {
-      hero.addEventListener('pointermove', function (event) {
-        const rect = hero.getBoundingClientRect();
-        pointerX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
-        pointerY = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
-      }, { passive: true });
-      hero.addEventListener('pointerleave', function () {
-        pointerX = 0;
-        pointerY = 0;
-      });
-    }
-
-    window.addEventListener('resize', resize, { passive: true });
-    document.addEventListener('visibilitychange', start);
-    reducedMotion.addEventListener('change', start);
-    resize();
-    start();
+  function handlePointerMove(event) {
+    if (coarsePointer.matches || reducedMotion.matches) return;
+    const rect = visual.getBoundingClientRect();
+    const now = performance.now();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const elapsed = Math.max(16, now - pointer.lastTime);
+    const speed = Math.hypot(x - pointer.lastX, y - pointer.lastY) / elapsed;
+    pointer.x = x;
+    pointer.y = y;
+    pointer.lastX = x;
+    pointer.lastY = y;
+    pointer.lastTime = now;
+    pointer.active = true;
+    pointer.energy = clamp(Math.max(pointer.energy, 0.22 + speed * 0.75));
+    scheduleRender();
   }
+
+  async function initialize() {
+    try {
+      const dataUrl = new URL('./data/spatial-demo.json', import.meta.url);
+      const response = await fetch(dataUrl);
+      if (!response.ok) throw new Error(`Unable to load spatial data (${response.status})`);
+      const data = await response.json();
+      if (!Array.isArray(data.cells) || !Array.isArray(data.metadata?.cellTypes)) {
+        throw new Error('Spatial data does not match the expected cell-transition schema.');
+      }
+      cellGroups = groupCells(data);
+      ready = true;
+      stage.dataset.status = 'ready';
+      measureProgress();
+      resize();
+    } catch (error) {
+      stage.dataset.status = 'error';
+      console.error('Unable to initialize the immune-state-to-iBALT hero:', error);
+    }
+  }
+
+  const resizeObserver = new ResizeObserver(resize);
+  resizeObserver.observe(stage);
+  window.addEventListener('scroll', measureProgress, { passive: true });
+  window.addEventListener('resize', measureProgress, { passive: true });
+  visual.addEventListener('pointermove', handlePointerMove, { passive: true });
+  visual.addEventListener('pointerleave', () => {
+    pointer.active = false;
+    pointer.energy = Math.max(pointer.energy, 0.16);
+    scheduleRender();
+  });
+  reducedMotion.addEventListener('change', () => {
+    measureProgress();
+    scheduleRender(true);
+  });
+  initialize();
 }

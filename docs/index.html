@@ -182,7 +182,7 @@ ul.task-list li input[type="checkbox"] {
   "name": "Arash Bagherabadi (Arash B. Abadi)",
   "description": "Spatial biology, computational immunology, scientific machine learning, laboratory robotics, and educational making.",
   "inLanguage": "en",
-  "dateModified": "2026-08-10",
+  "dateModified": "2026-08-12",
   "isPartOf": { "@id": "https://arashabadi.github.io/#website" },
   "mainEntity": { "@id": "https://arashabadi.github.io/#person" },
   "primaryImageOfPage": {
@@ -193,33 +193,50 @@ ul.task-list li input[type="checkbox"] {
 </script>
 
 <div class="home-shell">
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-visual" aria-hidden="true">
-      <img src="images/hero-spatial-girih.webp" alt="" fetchpriority="high">
-      <div class="hero-cell-stage" data-hero-cells=""></div>
-    </div>
+  <section class="hero" data-spatial-intro="" aria-labelledby="hero-title">
+    <div class="hero-sticky">
+      <div class="hero-visual">
+        <div class="hero-cell-stage" data-hero-cells="" role="img" aria-label="Animated immune cell populations reorganizing into an abstract iBALT-inspired spatial pattern"></div>
 
-    <div class="hero-copy">
-      <h1 id="hero-title">Arash<br>Bagherabadi <span class="alternate-name">(Arash B. Abadi)</span></h1>
-      <div class="hero-actions">
-        <a class="primary-action no-external" href="connect.html" target="_self">
-          <span>Digital card</span>
-          <i class="bi bi-arrow-right" aria-hidden="true"></i>
-        </a>
-        <a class="primary-action hero-github-action" href="https://github.com/arashabadi" rel="me noopener">
-          <span>GitHub</span>
-          <i class="bi bi-github" aria-hidden="true"></i>
-        </a>
-        <a class="primary-action" href="https://www.linkedin.com/in/arashbagherabadi" rel="me noopener">
-          <span>LinkedIn</span>
-          <i class="bi bi-linkedin" aria-hidden="true"></i>
-        </a>
+        <div class="cell-legend" aria-label="Immune cell populations">
+          <span><i class="legend-swatch legend-b-cell" aria-hidden="true"></i>B cells</span>
+          <span><i class="legend-swatch legend-cd4" aria-hidden="true"></i>CD4 T cells</span>
+          <span><i class="legend-swatch legend-cd8" aria-hidden="true"></i>CD8 T cells</span>
+          <span><i class="legend-swatch legend-treg" aria-hidden="true"></i>Tregs</span>
+          <span><i class="legend-swatch legend-macrophage" aria-hidden="true"></i>Macrophages</span>
+          <span><i class="legend-swatch legend-dendritic" aria-hidden="true"></i>Dendritic cells</span>
+        </div>
+
       </div>
-    </div>
 
-    <a class="scroll-cue no-external" href="#about" target="_self" aria-label="Continue to About">
-      <i class="bi bi-arrow-down" aria-hidden="true"></i>
-    </a>
+      <div class="hero-copy">
+        <h1 id="hero-title">Arash<br>Bagherabadi <span class="alternate-name">(Arash B. Abadi)</span></h1>
+        <p class="hero-role">Computational Immunology. Spatial Biology</p>
+        <div class="hero-actions">
+          <a class="primary-action no-external" href="#connect" target="_self">
+            <span class="hero-action-label"><i class="bi bi-person-vcard" aria-hidden="true"></i><span>Connect</span></span>
+            <i class="bi bi-arrow-down" aria-hidden="true"></i>
+          </a>
+          <a class="primary-action no-external" href="#about" target="_self">
+            <span class="hero-action-label"><i class="bi bi-person" aria-hidden="true"></i><span>About</span></span>
+            <i class="bi bi-arrow-down" aria-hidden="true"></i>
+          </a>
+          <a class="primary-action no-external" href="#publications" target="_self">
+            <span class="hero-action-label"><i class="bi bi-journal-text" aria-hidden="true"></i><span>Publications</span></span>
+            <i class="bi bi-arrow-down" aria-hidden="true"></i>
+          </a>
+          <a class="primary-action no-external" href="#projects" target="_self">
+            <span class="hero-action-label"><i class="bi bi-grid-3x3-gap" aria-hidden="true"></i><span>Projects</span></span>
+            <i class="bi bi-arrow-down" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-progress" aria-hidden="true"><span data-hero-progress=""></span></div>
+      <a class="scroll-cue no-external" href="#about" target="_self" aria-label="Continue to About">
+        <i class="bi bi-arrow-down" aria-hidden="true"></i>
+      </a>
+    </div>
   </section>
 
   <section class="about-band" id="about" aria-labelledby="about-title">
@@ -231,7 +248,6 @@ ul.task-list li input[type="checkbox"] {
       <div class="about-copy">
         <h2 id="about-title">Small Worlds, Large Systems</h2>
         <p class="about-intro">I am a PhD student at UAB studying immune biology with spatial and computational methods, especially where the work can inform vaccines and immunotherapy.</p>
-        <p class="about-fields">Spatial Biology <span aria-hidden="true">·</span> Immunology <span aria-hidden="true">·</span> Computation</p>
       </div>
     </div>
   </section>
@@ -335,10 +351,20 @@ ul.task-list li input[type="checkbox"] {
       <div class="connect-copy">
         <p class="eyebrow">Digital card</p>
         <h2 id="connect-title">Contact, profiles, and a digital card.</h2>
-        <a class="dark-action no-external" href="connect.html" target="_self">
-          <span>Open contact card</span>
-          <i class="bi bi-arrow-right" aria-hidden="true"></i>
-        </a>
+        <div class="connect-actions">
+          <a class="dark-action no-external" href="connect.html" target="_self">
+            <span>Open contact card</span>
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+          <a class="outline-action" href="https://github.com/arashabadi" rel="me noopener">
+            <span>GitHub</span>
+            <i class="bi bi-github" aria-hidden="true"></i>
+          </a>
+          <a class="outline-action" href="https://www.linkedin.com/in/arashbagherabadi" rel="me noopener">
+            <span>LinkedIn</span>
+            <i class="bi bi-linkedin" aria-hidden="true"></i>
+          </a>
+        </div>
       </div>
 
       <a class="qr-tool no-external" href="connect.html" target="_self" aria-label="Open Arash Bagherabadi's digital contact card">

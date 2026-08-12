@@ -9,6 +9,7 @@ project:
     - llms.txt
     - assets/arash-bagherabadi.vcf
     - assets/hero-cells.js
+    - assets/data/spatial-demo.json
     - assets/vendor/three.core.min.js
     - assets/vendor/three.module.min.js
     - assets/vendor/three.LICENSE.txt
