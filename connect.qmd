@@ -25,6 +25,10 @@ body-classes: connect-page
         <i class="bi bi-envelope" aria-hidden="true"></i>
         <span>Email</span>
       </a>
+      <a class="outline-action digital-card-home-action no-external" href="index.html" target="_self">
+        <span class="digital-card-home-label"><i class="bi bi-compass" aria-hidden="true"></i>Explore my work</span>
+        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+      </a>
     </div>
 
     <div class="digital-link-list" aria-label="Contact details and profiles">

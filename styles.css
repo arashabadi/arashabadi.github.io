@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Literata:opsz,wght@7..72,300;7..72,400;7..72,500&display=swap');
 
 :root {
   --ink: #080a0c;
@@ -10,8 +10,8 @@
   --cyan: #55c9db;
   --coral: #d77b5e;
   --green: #8fcf9a;
-  --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
-  --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --serif: 'Literata', Georgia, 'Times New Roman', serif;
+  --sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 * {
@@ -252,7 +252,7 @@ body.connect-page #quarto-content > main#quarto-document-content {
 
 .hero {
   background: var(--ink);
-  min-height: 240svh;
+  min-height: 300svh;
   position: relative;
 }
 
@@ -1067,6 +1067,21 @@ body.connect-page #quarto-content > main#quarto-document-content {
   margin-top: 2rem;
 }
 
+.digital-card-home-action {
+  grid-column: 1 / -1;
+  justify-content: space-between;
+}
+
+.digital-card-home-label {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.6rem;
+}
+
+.digital-card-home-label i {
+  color: var(--cyan);
+}
+
 .outline-action {
   border: 1px solid var(--line-dark);
   color: var(--text);
@@ -1648,7 +1663,7 @@ body:not(.home-page):not(.connect-page) main.content > .content {
   }
 
   .hero {
-    min-height: 190svh;
+    min-height: 240svh;
   }
 
   .hero-sticky {
@@ -1930,7 +1945,7 @@ body:not(.home-page):not(.connect-page) main.content > .content {
   }
 
   .hero {
-    min-height: 175svh;
+    min-height: 220svh;
   }
 
   .hero-sticky {

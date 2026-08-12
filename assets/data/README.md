@@ -1,6 +1,6 @@
 # Spatial transition data
 
-`spatial-demo.json` contains deterministic synthetic observations for the homepage prototype. Its endpoint is a schematic two-dimensional lung airway and iBALT organization; it is illustrative and is not an experimental result.
+`spatial-demo.json` contains deterministic synthetic observations for the homepage prototype. The browser uses the two-dimensional spatial endpoint as the base for an abstract, layered cell volume; it is illustrative and is not an experimental result.
 
 Each observation requires these fields:
 

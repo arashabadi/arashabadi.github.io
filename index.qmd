@@ -35,7 +35,7 @@ body-classes: home-page
           class="hero-cell-stage"
           data-hero-cells
           role="img"
-          aria-label="Animated immune cell populations reorganizing into an abstract iBALT-inspired spatial pattern"
+          aria-label="Animated immune cell populations reorganizing from cell states into an abstract layered tissue volume"
         ></div>
 
         <div class="cell-legend" aria-label="Immune cell populations">
