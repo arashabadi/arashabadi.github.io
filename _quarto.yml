@@ -14,6 +14,7 @@ project:
     - assets/vendor/three.module.min.js
     - assets/vendor/three.LICENSE.txt
     - images/contact-qr.svg
+    - images/favicon.svg
     - images/hero-spatial-layers.webp
     - images/hero-spatial-girih.webp
     - images/profile-professional.webp
@@ -29,6 +30,7 @@ project:
 
 website:
   title: "Arash Bagherabadi"
+  favicon: images/favicon.svg
   site-url: "https://arashabadi.github.io"
   description: "Arash Bagherabadi (Arash B. Abadi): spatial biology, computational immunology, single-cell bioinformatics, scientific machine learning, laboratory robotics, and educational making."
   open-graph: true
