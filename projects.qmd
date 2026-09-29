@@ -42,7 +42,9 @@ An interactive educational app for learning how CellRank 2 turns neighborhood gr
 
 An interactive 3D mouse-lung anatomy reference built from the M07 lung and airway meshes. Adjust a section plane, inspect its two-dimensional mesh intersection, and export labeled figure PNGs, GIFs, or supplementary videos. The app distinguishes source geometry from schematic airspaces and keeps exploratory planes separate from specimen-specific registration.
 
-[Open Explorer →](https://arashabadi.github.io/mouse-lung-explorer/)
+[Explore Interactive Lite →](https://arashabadi.github.io/mouse-lung-explorer/viewer/mouse_lung_v3.1_lite.html)
+
+[Download Full Viewer →](https://arashabadi.github.io/mouse-lung-explorer/)
 
 [View Repository →](https://github.com/arashabadi/mouse-lung-explorer)
 :::
